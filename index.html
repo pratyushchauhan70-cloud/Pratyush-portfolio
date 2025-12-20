@@ -1,166 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pratyush | Poster & Social Media Designer</title>
 
   <style>
-    body {
+    :root {
+      --bg: #121212;
+      --card: #1c1c1c;
+      --gold: #f5c77a;
+      --text: #eaeaea;
+      --muted: #bdbdbd;
+      --green: #25D366;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #ffffff;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    h1, h2 {
-      text-align: center;
-      color: #f5b942;
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    .section {
-      max-width: 1000px;
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
       margin: auto;
-      padding: 40px 20px;
+    }
+
+    h1, h2, h3 {
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 70px;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero span {
+      color: var(--gold);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--green);
+      color: #000;
+      padding: 14px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: #1a1a1a;
-      border-radius: 12px;
+      background: var(--card);
       padding: 20px;
-      margin-bottom: 40px;
+      border-radius: 12px;
       text-align: center;
     }
 
     .card img {
       width: 100%;
-      max-width: 350px;
       border-radius: 10px;
-      margin: 15px 0;
+      margin-bottom: 12px;
     }
 
-    .pricing {
-      background: #111;
-      border-radius: 10px;
+    .price-box {
+      background: #181818;
       padding: 15px;
-      margin-top: 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+      font-size: 0.95rem;
     }
 
-    .pricing p {
-      margin: 8px 0;
-      font-size: 15px;
+    .price-box strong {
+      color: var(--gold);
     }
 
-    .pricing span {
-      color: #f5b942;
-      font-weight: bold;
+    .divider {
+      height: 1px;
+      background: #2a2a2a;
+      margin: 40px 0;
     }
 
-    .trial {
-      color: #25d366;
-      font-weight: bold;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 22px;
-      background: #25d366;
-      color: #000;
-      font-weight: bold;
-      border-radius: 25px;
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      background: #1ebe5d;
-    }
-
-    /* Mobile Friendly */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 22px;
-      }
-      h2 {
-        font-size: 18px;
-      }
-      .pricing p {
-        font-size: 14px;
-      }
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
 
-  <div class="section">
-    <h1>Sample Work by Industry</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Hi, I’m <span>Pratyush</span></h1>
+    <p>Poster & Social Media Designer helping businesses attract customers and increase engagement.</p>
+    <a class="cta-btn" href="https://wa.me/919699716215" target="_blank">Chat on WhatsApp</a>
+  </section>
 
-    <!-- Cafes -->
-    <div class="card">
-      <h2>🍔 Cafes & Restaurants</h2>
-      <img src="images/cafe.png" alt="Cafe Poster Sample">
+  <div class="divider"></div>
 
-      <div class="pricing">
-        <p class="trial">Free Trial Poster: ₹199 (India) · $5 (International)</p>
-        <p><span>India:</span> ₹499 / poster · ₹3,499 (8 posters/month)</p>
-        <p><span>International:</span> $10 / poster · $70 (8 posters/month)</p>
+  <!-- WHAT I DO -->
+  <section>
+    <h2>What I Do</h2>
+    <p>
+      I design high-quality Instagram posters and promotional creatives for businesses.
+      My focus industries are cafés & restaurants, gyms & fitness brands, coaching centers,
+      and real estate businesses.
+    </p>
+    <p>
+      My goal is simple: clean designs that look professional and help you get more customers.
+    </p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SAMPLE WORK -->
+  <section>
+    <h2>Sample Work by Industry</h2>
+
+    <div class="cards">
+
+      <!-- Cafe -->
+      <div class="card">
+        <h3>🍔 Cafes & Restaurants</h3>
+        <img src="images/cafe.png" alt="Cafe Poster Sample"/>
+        <div class="price-box">
+          <p><strong>India:</strong> ₹349 / poster</p>
+          <p><strong>International:</strong> $7 / poster</p>
+          <p><strong>Trial Poster:</strong> ₹149</p>
+        </div>
       </div>
 
-      <a class="btn" href="https://wa.me/919699716215" target="_blank">
-        Chat on WhatsApp
-      </a>
-    </div>
-
-    <!-- Gym -->
-    <div class="card">
-      <h2>🏋️ Gym & Fitness</h2>
-      <img src="images/gym.png" alt="Gym Poster Sample">
-
-      <div class="pricing">
-        <p class="trial">Free Trial Poster: ₹199 (India) · $5 (International)</p>
-        <p><span>India:</span> ₹499 / poster · ₹3,499 (8 posters/month)</p>
-        <p><span>International:</span> $10 / poster · $70 (8 posters/month)</p>
+      <!-- Gym -->
+      <div class="card">
+        <h3>🏋️ Gym & Fitness</h3>
+        <img src="images/gym.png" alt="Gym Poster Sample"/>
+        <div class="price-box">
+          <p><strong>India:</strong> ₹399 / poster</p>
+          <p><strong>International:</strong> $8 / poster</p>
+          <p><strong>Trial Poster:</strong> ₹199</p>
+        </div>
       </div>
 
-      <a class="btn" href="https://wa.me/919699716215" target="_blank">
-        Chat on WhatsApp
-      </a>
-    </div>
-
-    <!-- Coaching -->
-    <div class="card">
-      <h2>📘 Coaching Centers</h2>
-      <img src="images/coaching.png" alt="Coaching Poster Sample">
-
-      <div class="pricing">
-        <p class="trial">Free Trial Poster: ₹199 (India) · $5 (International)</p>
-        <p><span>India:</span> ₹499 / poster · ₹3,499 (8 posters/month)</p>
-        <p><span>International:</span> $10 / poster · $70 (8 posters/month)</p>
+      <!-- Coaching -->
+      <div class="card">
+        <h3>📘 Coaching Centers</h3>
+        <img src="images/coaching.png" alt="Coaching Poster Sample"/>
+        <div class="price-box">
+          <p><strong>India:</strong> ₹349 / poster</p>
+          <p><strong>International:</strong> $7 / poster</p>
+          <p><strong>Trial Poster:</strong> ₹149</p>
+        </div>
       </div>
 
-      <a class="btn" href="https://wa.me/919699716215" target="_blank">
-        Chat on WhatsApp
-      </a>
-    </div>
-
-    <!-- Real Estate -->
-    <div class="card">
-      <h2>🏡 Real Estate</h2>
-      <img src="images/realestate.png" alt="Real Estate Poster Sample">
-
-      <div class="pricing">
-        <p class="trial">Free Trial Poster: ₹299 (India) · $7 (International)</p>
-        <p><span>India:</span> ₹699 / poster · ₹4,999 (8 posters/month)</p>
-        <p><span>International:</span> $15 / poster · $100 (8 posters/month)</p>
+      <!-- Real Estate -->
+      <div class="card">
+        <h3>🏠 Real Estate</h3>
+        <img src="images/realestate.png" alt="Real Estate Poster Sample"/>
+        <div class="price-box">
+          <p><strong>India:</strong> ₹499 / poster</p>
+          <p><strong>International:</strong> $10 / poster</p>
+          <p><strong>Trial Poster:</strong> ₹249</p>
+        </div>
       </div>
 
-      <a class="btn" href="https://wa.me/919699716215" target="_blank">
-        Chat on WhatsApp
-      </a>
     </div>
+  </section>
 
-  </div>
+  <div class="divider"></div>
+
+  <!-- WHY ME -->
+  <section>
+    <h2>Why Work With Me?</h2>
+    <p>✔ Clean & modern designs</p>
+    <p>✔ Industry-specific posters</p>
+    <p>✔ Affordable pricing for startups</p>
+    <p>✔ Fast delivery & revisions</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FINAL CTA -->
+  <section style="text-align:center;">
+    <h2>Let’s Work Together</h2>
+    <p>Message me on WhatsApp and let’s start with a trial poster.</p>
+    <a class="cta-btn" href="https://wa.me/919699716215" target="_blank">Start on WhatsApp</a>
+  </section>
+
+  <footer>
+    ©️ 2025 Pratyush • Poster & Social Media Designer
+  </footer>
 
 </body>
 </html>
