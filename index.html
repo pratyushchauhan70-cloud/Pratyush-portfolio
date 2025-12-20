@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poster & Social Media Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0e0e0e;
+      color: #ffffff;
+    }
+
+    section {
+      padding: 60px 16px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #ffb703;
+      text-align: center;
+    }
+
+    p {
+      color: #dcdcdc;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 22px;
+      background: #25D366;
+      color: #000;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* NICHES */
+    .niche {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .niche h3 {
+      color: #ffb703;
+      margin: 0;
+      text-align: center;
+    }
+
+    .poster {
+      display: none;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .poster img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+      color: #aaa;
+    }
+  </style>
+
+  <script>
+    function togglePoster(id) {
+      const poster = document.getElementById(id);
+      poster.style.display = poster.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section>
+  <h1>Poster & Social Media Designer</h1>
+  <p>Cafes • Gyms • Coaching • Real Estate</p>
+
+  <div style="text-align:center;">
+    <a class="btn" href="https://wa.me/919699716215" target="_blank">
+      Chat on WhatsApp (Trial Available)
+    </a>
+  </div>
+</section>
+
+<!-- NICHES -->
+<section>
+  <h2>Sample Work by Industry</h2>
+
+  <!-- CAFE -->
+  <div class="niche" onclick="togglePoster('cafe')">
+    <h3>🍔 Cafes & Restaurants</h3>
+    <div class="poster" id="cafe">
+      <img src="images/cafe.png" alt="Cafe Poster Sample">
+    </div>
+  </div>
+
+  <!-- GYM -->
+  <div class="niche" onclick="togglePoster('gym')">
+    <h3>🏋️ Gym & Fitness</h3>
+    <div class="poster" id="gym">
+      <img src="images/gym.png" alt="Gym Poster Sample">
+    </div>
+  </div>
+
+  <!-- COACHING -->
+  <div class="niche" onclick="togglePoster('coaching')">
+    <h3>🎓 Coaching Centers</h3>
+    <div class="poster" id="coaching">
+      <img src="images/coaching.png" alt="Coaching Poster Sample">
+    </div>
+  </div>
+
+  <!-- REAL ESTATE -->
+  <div class="niche" onclick="togglePoster('realestate')">
+    <h3>🏢 Real Estate</h3>
+    <div class="poster" id="realestate">
+      <img src="images/realestate.png" alt="Real Estate Poster Sample">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <h2>Want a Poster Like This?</h2>
+  <p>Start with a paid trial poster. Continue only if you like the work.</p>
+
+  <div style="text-align:center;">
+    <a class="btn" href="https://wa.me/919699716215" target="_blank">
+      Start Trial on WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  ©️ 2025 • Poster & Social Media Designer
+</footer>
+
+</body>
+</html>
