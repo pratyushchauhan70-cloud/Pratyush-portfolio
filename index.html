@@ -23,20 +23,6 @@ body{
 background:#05060a;
 color:white;
 overflow-x:hidden;
-cursor:none;
-}
-
-/* CUSTOM CURSOR */
-
-.cursor{
-width:18px;
-height:18px;
-border:2px solid #4ade80;
-border-radius:50%;
-position:fixed;
-pointer-events:none;
-transform:translate(-50%,-50%);
-z-index:9999;
 }
 
 /* NAVBAR */
@@ -86,8 +72,6 @@ padding:0 20px;
 position:relative;
 overflow:hidden;
 }
-
-/* Animated background */
 
 .hero::before{
 content:'';
@@ -215,23 +199,6 @@ padding:30px;
 border-radius:12px;
 }
 
-/* TESTIMONIAL */
-
-.testimonials{
-max-width:700px;
-margin:auto;
-text-align:center;
-}
-
-.testimonial{
-display:none;
-opacity:0.9;
-}
-
-.testimonial.active{
-display:block;
-}
-
 /* CONTACT */
 
 form{
@@ -271,7 +238,7 @@ margin:0 10px;
 text-decoration:none;
 }
 
-/* FLOAT WHATSAPP */
+/* WHATSAPP BUTTON */
 
 .whatsapp{
 position:fixed;
@@ -284,27 +251,11 @@ color:white;
 text-decoration:none;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:36px;
-}
-
-nav ul{
-display:none;
-}
-
-}
-
 </style>
 
 </head>
 
 <body>
-
-<div class="cursor"></div>
 
 <nav>
 
@@ -320,7 +271,7 @@ display:none;
 
 <section class="hero">
 
-<h1>Premium Poster Design Studio</h1>
+<h1>Poster Forge Design Studio</h1>
 
 <p>Poster Forge creates modern promotional posters for coaching institutes, gyms and growing brands.</p>
 
@@ -346,7 +297,7 @@ display:none;
 
 <div class="card">
 <h3>Social Media Creatives</h3>
-<p>Modern Instagram and WhatsApp promotional designs.</p>
+<p>Modern Instagram promotional creatives.</p>
 </div>
 
 </div>
@@ -363,60 +314,9 @@ display:none;
 <img src="images/gym.png" onclick="openLightbox(this.src)">
 <img src="images/cafe.png" onclick="openLightbox(this.src)">
 <img src="images/realestate.png" onclick="openLightbox(this.src)">
-<img src="images/event.png" onclick="openLightbox(this.src)">
-<img src="images/restaurant.png" onclick="openLightbox(this.src)">
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Our Process</h2>
-
-<div class="process">
-
-<div class="step">
-<h3>1. Requirement</h3>
-<p>Client shares poster details.</p>
-</div>
-
-<div class="step">
-<h3>2. Concept</h3>
-<p>Modern poster concept designed.</p>
-</div>
-
-<div class="step">
-<h3>3. Feedback</h3>
-<p>Client reviews and suggests edits.</p>
-</div>
-
-<div class="step">
-<h3>4. Delivery</h3>
-<p>Final poster delivered.</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Client Reviews</h2>
-
-<div class="testimonials">
-
-<div class="testimonial active">
-"Excellent poster design. Our coaching received many enquiries."
-</div>
-
-<div class="testimonial">
-"Professional quality and fast delivery."
-</div>
-
-<div class="testimonial">
-"Best designer for business promotions."
-</div>
+<img src="images/2.png" onclick="openLightbox(this.src)">
+<img src="images/3.png" onclick="openLightbox(this.src)">
+<img src="images/4.png" onclick="openLightbox(this.src)">
 
 </div>
 
@@ -480,27 +380,6 @@ let text="New Client Inquiry:%0A%0A"+
 window.open("https://wa.me/919699716215?text="+text,"_blank");
 
 }
-
-/* Cursor */
-
-const cursor=document.querySelector(".cursor");
-
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-});
-
-/* Testimonials slider */
-
-let i=0;
-
-setInterval(()=>{
-let t=document.querySelectorAll(".testimonial");
-t.forEach(el=>el.classList.remove("active"));
-i++;
-if(i>=t.length){i=0;}
-t[i].classList.add("active");
-},4000);
 
 </script>
 
