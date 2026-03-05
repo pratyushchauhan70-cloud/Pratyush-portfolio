@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Poster Forge Studio | Poster Design</title>
+<title>Poster Forge Design Studio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -92,16 +93,18 @@ padding:90px 6%;
 
 h2{
 text-align:center;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
-/* SERVICES */
+/* GRID */
 
-.services{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
+
+/* CARD */
 
 .card{
 background:#171a26;
@@ -116,12 +119,6 @@ transform:translateY(-6px);
 
 /* PORTFOLIO */
 
-.portfolio{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
 .portfolio img{
 width:100%;
 border-radius:10px;
@@ -131,57 +128,6 @@ transition:0.3s;
 
 .portfolio img:hover{
 transform:scale(1.05);
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-z-index:999;
-}
-
-.lightbox img{
-max-width:90%;
-max-height:90%;
-}
-
-/* CLIENT LOGOS */
-
-.clients{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:40px;
-opacity:0.7;
-}
-
-.clients img{
-height:40px;
-}
-
-/* TESTIMONIALS */
-
-.testimonials{
-max-width:800px;
-margin:auto;
-text-align:center;
-}
-
-.testimonial{
-display:none;
-font-style:italic;
-}
-
-.testimonial.active{
-display:block;
 }
 
 /* CONTACT */
@@ -206,6 +152,15 @@ padding:12px;
 border:none;
 border-radius:6px;
 cursor:pointer;
+}
+
+/* CTA */
+
+.cta{
+text-align:center;
+background:#171a26;
+padding:60px;
+border-radius:10px;
 }
 
 /* FOOTER */
@@ -235,6 +190,25 @@ color:white;
 text-decoration:none;
 }
 
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
 @media(max-width:768px){
 
 .hero h1{
@@ -258,8 +232,8 @@ display:none;
 <div class="logo">Poster Forge</div>
 
 <ul>
-<li><a href="#services">Services</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#services">Services</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -271,7 +245,7 @@ display:none;
 
 <h1>Modern Posters That Attract Customers</h1>
 
-<p>Poster Forge Studio creates modern promotional posters for coaching institutes, gyms and local businesses.</p>
+<p>Poster Forge Design Studio creates modern promotional posters for coaching institutes, gyms and local businesses.</p>
 
 <a href="#portfolio" class="btn">View Portfolio</a>
 
@@ -283,7 +257,7 @@ display:none;
 
 <h2>Services</h2>
 
-<div class="services">
+<div class="grid">
 
 <div class="card">
 <h3>Coaching Posters</h3>
@@ -291,13 +265,13 @@ display:none;
 </div>
 
 <div class="card">
-<h3>Business Promotions</h3>
-<p>Posters for gyms, cafes and businesses.</p>
+<h3>Business Posters</h3>
+<p>Promotional posters for gyms, cafes and local businesses.</p>
 </div>
 
 <div class="card">
 <h3>Social Media Creatives</h3>
-<p>Instagram and WhatsApp marketing graphics.</p>
+<p>Instagram and WhatsApp promotional graphics.</p>
 </div>
 
 </div>
@@ -310,7 +284,7 @@ display:none;
 
 <h2>Poster Gallery</h2>
 
-<div class="portfolio">
+<div class="grid portfolio">
 
 <img src="images/coaching.png" onclick="openLightbox(this.src)">
 <img src="images/gym.png" onclick="openLightbox(this.src)">
@@ -321,42 +295,19 @@ display:none;
 
 </section>
 
-<!-- CLIENT LOGOS -->
+<!-- CALL TO ACTION -->
 
 <section>
 
-<h2>Trusted By</h2>
+<div class="cta">
 
-<div class="clients">
+<h2>Need a Poster for Your Business?</h2>
 
-<img src="images/client1.png">
-<img src="images/client2.png">
-<img src="images/client3.png">
-<img src="images/client4.png">
+<p>Get your professional poster designed today.</p>
 
-</div>
+<br>
 
-</section>
-
-<!-- TESTIMONIALS -->
-
-<section>
-
-<h2>Client Reviews</h2>
-
-<div class="testimonials">
-
-<div class="testimonial active">
-"Great poster design. Our coaching received many inquiries."
-</div>
-
-<div class="testimonial">
-"Professional work and fast delivery."
-</div>
-
-<div class="testimonial">
-"Best designer for local business promotions."
-</div>
+<a href="https://wa.me/919699716215" class="btn">Chat on WhatsApp</a>
 
 </div>
 
@@ -384,7 +335,7 @@ display:none;
 
 <footer>
 
-<p>Poster Forge Studio</p>
+<p>Poster Forge Design Studio</p>
 
 <a href="https://instagram.com/posterforgedesignstudio">Instagram</a>
 <a href="mailto:pratyushchauhan70@gmail.com">Email</a>
@@ -407,23 +358,6 @@ document.getElementById("lightbox-img").src=src;
 function closeLightbox(){
 document.getElementById("lightbox").style.display="none";
 }
-
-let index=0;
-
-setInterval(()=>{
-let testimonials=document.querySelectorAll(".testimonial");
-
-testimonials.forEach(t=>t.classList.remove("active"));
-
-index++;
-
-if(index>=testimonials.length){
-index=0;
-}
-
-testimonials[index].classList.add("active");
-
-},4000);
 
 </script>
 
