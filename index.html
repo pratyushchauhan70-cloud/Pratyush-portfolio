@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,21 +20,38 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0f1117;
+background:#05060a;
 color:white;
+overflow-x:hidden;
+cursor:none;
+}
+
+/* CUSTOM CURSOR */
+
+.cursor{
+width:18px;
+height:18px;
+border:2px solid #4ade80;
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:9999;
 }
 
 /* NAVBAR */
 
 nav{
+position:fixed;
+top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 6%;
-background:#0f1117;
-position:sticky;
-top:0;
-border-bottom:1px solid rgba(255,255,255,0.05);
+padding:22px 7%;
+background:rgba(10,10,15,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 .logo{
@@ -46,148 +62,122 @@ color:#4ade80;
 
 nav ul{
 display:flex;
-gap:25px;
+gap:30px;
 list-style:none;
 }
 
-nav ul li a{
-text-decoration:none;
+nav ul a{
 color:white;
+text-decoration:none;
 font-size:14px;
+opacity:0.9;
 }
 
 /* HERO */
 
 .hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:120px 20px;
-background:radial-gradient(circle at top,#1d2233,#0f1117);
+padding:0 20px;
+position:relative;
+overflow:hidden;
+}
+
+/* Animated background */
+
+.hero::before{
+content:'';
+position:absolute;
+width:800px;
+height:800px;
+background:radial-gradient(circle,#4ade80,transparent 60%);
+filter:blur(120px);
+opacity:0.3;
+animation:float 10s infinite alternate;
+}
+
+@keyframes float{
+0%{transform:translateY(-20px);}
+100%{transform:translateY(40px);}
 }
 
 .hero h1{
-font-size:42px;
+font-size:64px;
 margin-bottom:20px;
+background:linear-gradient(90deg,#4ade80,#22d3ee);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
-max-width:600px;
-margin:auto;
+max-width:620px;
+opacity:0.85;
 margin-bottom:30px;
-opacity:0.8;
 }
 
 .btn{
 background:#4ade80;
-padding:14px 28px;
+padding:16px 34px;
 border-radius:8px;
 text-decoration:none;
 color:black;
 font-weight:500;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
-padding:90px 6%;
+padding:110px 7%;
 }
 
 h2{
 text-align:center;
-margin-bottom:40px;
+margin-bottom:60px;
+font-size:34px;
 }
 
-/* GRID */
+/* SERVICES */
 
-.grid{
+.services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
 }
-
-/* CARD */
 
 .card{
-background:#171a26;
-padding:25px;
-border-radius:10px;
-transition:0.3s;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+padding:35px;
+border-radius:14px;
+transition:0.4s;
+backdrop-filter:blur(6px);
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-10px);
 }
 
 /* PORTFOLIO */
 
-.portfolio img{
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.gallery img{
 width:100%;
 border-radius:10px;
 cursor:pointer;
-transition:0.3s;
+transition:0.4s;
 }
 
-.portfolio img:hover{
-transform:scale(1.05);
-}
-
-/* CONTACT */
-
-form{
-max-width:600px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input,textarea{
-padding:12px;
-border-radius:6px;
-border:none;
-}
-
-.submit{
-background:#4ade80;
-padding:12px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-
-/* CTA */
-
-.cta{
-text-align:center;
-background:#171a26;
-padding:60px;
-border-radius:10px;
-}
-
-/* FOOTER */
-
-footer{
-background:#0b0d13;
-padding:40px;
-text-align:center;
-}
-
-footer a{
-color:#4ade80;
-margin:0 10px;
-text-decoration:none;
-}
-
-/* WHATSAPP BUTTON */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:14px 20px;
-border-radius:40px;
-color:white;
-text-decoration:none;
+.gallery img:hover{
+transform:scale(1.08);
 }
 
 /* LIGHTBOX */
@@ -202,6 +192,7 @@ height:100%;
 background:rgba(0,0,0,0.9);
 justify-content:center;
 align-items:center;
+z-index:2000;
 }
 
 .lightbox img{
@@ -209,10 +200,96 @@ max-width:90%;
 max-height:90%;
 }
 
+/* PROCESS */
+
+.process{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.step{
+background:rgba(255,255,255,0.04);
+padding:30px;
+border-radius:12px;
+}
+
+/* TESTIMONIAL */
+
+.testimonials{
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.testimonial{
+display:none;
+opacity:0.9;
+}
+
+.testimonial.active{
+display:block;
+}
+
+/* CONTACT */
+
+form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,textarea{
+padding:14px;
+border-radius:6px;
+border:none;
+}
+
+.submit{
+background:#25D366;
+border:none;
+padding:14px;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+background:#04050a;
+}
+
+footer a{
+color:#4ade80;
+margin:0 10px;
+text-decoration:none;
+}
+
+/* FLOAT WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:14px 20px;
+border-radius:40px;
+color:white;
+text-decoration:none;
+}
+
+/* MOBILE */
+
 @media(max-width:768px){
 
 .hero h1{
-font-size:30px;
+font-size:36px;
 }
 
 nav ul{
@@ -227,107 +304,137 @@ display:none;
 
 <body>
 
+<div class="cursor"></div>
+
 <nav>
 
 <div class="logo">Poster Forge</div>
 
 <ul>
-<li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
 </nav>
 
-<!-- HERO -->
-
 <section class="hero">
 
-<h1>Modern Posters That Attract Customers</h1>
+<h1>Premium Poster Design Studio</h1>
 
-<p>Poster Forge Design Studio creates modern promotional posters for coaching institutes, gyms and local businesses.</p>
+<p>Poster Forge creates modern promotional posters for coaching institutes, gyms and growing brands.</p>
 
 <a href="#portfolio" class="btn">View Portfolio</a>
 
 </section>
 
-<!-- SERVICES -->
-
 <section id="services">
 
 <h2>Services</h2>
 
-<div class="grid">
+<div class="services">
 
 <div class="card">
 <h3>Coaching Posters</h3>
-<p>Admission posters and coaching promotions.</p>
+<p>Admission posters designed to attract students.</p>
 </div>
 
 <div class="card">
-<h3>Business Posters</h3>
-<p>Promotional posters for gyms, cafes and local businesses.</p>
+<h3>Business Promotions</h3>
+<p>High-impact promotional posters for local brands.</p>
 </div>
 
 <div class="card">
 <h3>Social Media Creatives</h3>
-<p>Instagram and WhatsApp promotional graphics.</p>
+<p>Modern Instagram and WhatsApp promotional designs.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- PORTFOLIO -->
-
 <section id="portfolio">
 
-<h2>Poster Gallery</h2>
+<h2>Portfolio</h2>
 
-<div class="grid portfolio">
+<div class="gallery">
 
 <img src="images/coaching.png" onclick="openLightbox(this.src)">
 <img src="images/gym.png" onclick="openLightbox(this.src)">
 <img src="images/cafe.png" onclick="openLightbox(this.src)">
 <img src="images/realestate.png" onclick="openLightbox(this.src)">
+<img src="images/event.png" onclick="openLightbox(this.src)">
+<img src="images/restaurant.png" onclick="openLightbox(this.src)">
 
 </div>
 
 </section>
-
-<!-- CALL TO ACTION -->
 
 <section>
 
-<div class="cta">
+<h2>Our Process</h2>
 
-<h2>Need a Poster for Your Business?</h2>
+<div class="process">
 
-<p>Get your professional poster designed today.</p>
+<div class="step">
+<h3>1. Requirement</h3>
+<p>Client shares poster details.</p>
+</div>
 
-<br>
+<div class="step">
+<h3>2. Concept</h3>
+<p>Modern poster concept designed.</p>
+</div>
 
-<a href="https://wa.me/919699716215" class="btn">Chat on WhatsApp</a>
+<div class="step">
+<h3>3. Feedback</h3>
+<p>Client reviews and suggests edits.</p>
+</div>
+
+<div class="step">
+<h3>4. Delivery</h3>
+<p>Final poster delivered.</p>
+</div>
 
 </div>
 
 </section>
 
-<!-- CONTACT -->
+<section>
+
+<h2>Client Reviews</h2>
+
+<div class="testimonials">
+
+<div class="testimonial active">
+"Excellent poster design. Our coaching received many enquiries."
+</div>
+
+<div class="testimonial">
+"Professional quality and fast delivery."
+</div>
+
+<div class="testimonial">
+"Best designer for business promotions."
+</div>
+
+</div>
+
+</section>
 
 <section id="contact">
 
-<h2>Client Inquiry</h2>
+<h2>Send Inquiry</h2>
 
-<form>
+<form onsubmit="sendToWhatsApp(); return false;">
 
-<input type="text" placeholder="Your Name">
+<input type="text" id="name" placeholder="Your Name" required>
 
-<input type="email" placeholder="Email">
+<input type="email" id="email" placeholder="Your Email" required>
 
-<textarea placeholder="Describe your requirement"></textarea>
+<textarea id="message" placeholder="Describe your requirement" required></textarea>
 
-<button class="submit">Send Inquiry</button>
+<button class="submit">Send on WhatsApp</button>
 
 </form>
 
@@ -358,6 +465,42 @@ document.getElementById("lightbox-img").src=src;
 function closeLightbox(){
 document.getElementById("lightbox").style.display="none";
 }
+
+function sendToWhatsApp(){
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let message=document.getElementById("message").value;
+
+let text="New Client Inquiry:%0A%0A"+
+"Name: "+name+"%0A"+
+"Email: "+email+"%0A"+
+"Requirement: "+message;
+
+window.open("https://wa.me/919699716215?text="+text,"_blank");
+
+}
+
+/* Cursor */
+
+const cursor=document.querySelector(".cursor");
+
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
+
+/* Testimonials slider */
+
+let i=0;
+
+setInterval(()=>{
+let t=document.querySelectorAll(".testimonial");
+t.forEach(el=>el.classList.remove("active"));
+i++;
+if(i>=t.length){i=0;}
+t[i].classList.add("active");
+},4000);
 
 </script>
 
