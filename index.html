@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pratyush | Poster & Social Media Designer</title>
+
+<style>
+
+:root{
+--bg:#121212;
+--card:#1c1c1c;
+--gold:#f5c77a;
+--text:#ffffff;
+--muted:#bdbdbd;
+--green:#25D366;
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:40px;
+color:var(--gold);
+margin-bottom:10px;
+}
+
+.subtitle{
+color:var(--muted);
+font-size:18px;
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:50px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:var(--card);
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h3{
+color:var(--gold);
+margin-bottom:10px;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+text-align:center;
+}
+
+.portfolio img{
+width:100%;
+border-radius:8px;
+margin-top:15px;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+padding:60px 20px;
+}
+
+.contact a{
+background:var(--green);
+color:white;
+padding:14px 25px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:30px;
+}
+
+.subtitle{
+font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>Pratyush Designs</h1>
+
+<p class="subtitle">
+Helping coaching institutes, teachers & small businesses grow with professional posters.
+</p>
+
+</section>
+
+
+<section class="services">
+
+<div class="card">
+<h3>Coaching Posters</h3>
+<p>New batch announcements, exam results, and promotional posters for coaching institutes.</p>
+</div>
+
+<div class="card">
+<h3>Social Media Posters</h3>
+<p>Instagram, Facebook and WhatsApp promotional designs to attract students.</p>
+</div>
+
+<div class="card">
+<h3>Business Posters</h3>
+<p>Promotional graphics for gyms, cafes, real estate, and local businesses.</p>
+</div>
+
+</section>
+
+
+<section class="portfolio">
+
+<h2>Recent Work</h2>
+
+<img src="images/coaching.png">
+
+<img src="images/gym.png">
+
+<img src="images/cafe.png">
+
+<img src="images/realestate.png">
+
+</section>
+
+
+<section class="contact">
+
+<h2>Need a Poster?</h2>
+
+<p style="margin-bottom:20px;">Same day delivery • Unlimited revisions</p>
+
+<a href="mailto:pratyushchauhan70@gmail.com">Contact Me</a>
+
+</section>
+
+
+</body>
+</html>
