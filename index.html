@@ -20,7 +20,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#05060a;
+background:#04050a;
 color:white;
 overflow-x:hidden;
 }
@@ -34,14 +34,24 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:22px 7%;
-background:rgba(10,10,15,0.6);
-backdrop-filter:blur(10px);
+padding:18px 8%;
+background:rgba(10,10,15,0.7);
+backdrop-filter:blur(12px);
 z-index:1000;
 }
 
 .logo{
-font-size:22px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:40px;
+border-radius:50%;
+}
+
+.logo span{
 font-weight:600;
 color:#4ade80;
 }
@@ -53,8 +63,8 @@ list-style:none;
 }
 
 nav ul a{
-color:white;
 text-decoration:none;
+color:white;
 font-size:14px;
 opacity:0.9;
 }
@@ -69,59 +79,47 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:0 20px;
-position:relative;
-overflow:hidden;
-}
-
-.hero::before{
-content:'';
-position:absolute;
-width:800px;
-height:800px;
-background:radial-gradient(circle,#4ade80,transparent 60%);
-filter:blur(120px);
-opacity:0.3;
-animation:float 10s infinite alternate;
-}
-
-@keyframes float{
-0%{transform:translateY(-20px);}
-100%{transform:translateY(40px);}
 }
 
 .hero h1{
-font-size:64px;
+font-size:60px;
 margin-bottom:20px;
+
 background:linear-gradient(90deg,#4ade80,#22d3ee);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-max-width:620px;
+max-width:650px;
 opacity:0.85;
 margin-bottom:30px;
 }
 
-.btn{
+.hero-btn{
 background:#4ade80;
-padding:16px 34px;
+padding:16px 36px;
 border-radius:8px;
 text-decoration:none;
 color:black;
 font-weight:500;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+transform:scale(1.05);
 }
 
 /* SECTION */
 
 section{
-padding:110px 7%;
+padding:110px 8%;
 }
 
 h2{
 text-align:center;
+font-size:36px;
 margin-bottom:60px;
-font-size:34px;
 }
 
 /* SERVICES */
@@ -136,32 +134,33 @@ gap:30px;
 background:rgba(255,255,255,0.04);
 border:1px solid rgba(255,255,255,0.08);
 padding:35px;
-border-radius:14px;
+border-radius:16px;
+backdrop-filter:blur(8px);
 transition:0.4s;
-backdrop-filter:blur(6px);
 }
 
 .card:hover{
 transform:translateY(-10px);
+border:1px solid #4ade80;
 }
 
 /* PORTFOLIO */
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
+column-count:3;
+column-gap:20px;
 }
 
 .gallery img{
 width:100%;
-border-radius:10px;
+margin-bottom:20px;
+border-radius:12px;
 cursor:pointer;
 transition:0.4s;
 }
 
 .gallery img:hover{
-transform:scale(1.08);
+transform:scale(1.04);
 }
 
 /* LIGHTBOX */
@@ -182,21 +181,43 @@ z-index:2000;
 .lightbox img{
 max-width:90%;
 max-height:90%;
+border-radius:10px;
 }
 
-/* PROCESS */
+/* TRUST */
 
-.process{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
+.trust{
 text-align:center;
+max-width:600px;
+margin:auto;
 }
 
-.step{
-background:rgba(255,255,255,0.04);
-padding:30px;
-border-radius:12px;
+.trust p{
+margin:10px 0;
+opacity:0.9;
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(90deg,#4ade80,#22d3ee);
+text-align:center;
+padding:80px 20px;
+border-radius:20px;
+}
+
+.cta h3{
+font-size:32px;
+margin-bottom:20px;
+color:black;
+}
+
+.cta a{
+background:black;
+color:white;
+padding:14px 30px;
+border-radius:8px;
+text-decoration:none;
 }
 
 /* CONTACT */
@@ -206,7 +227,7 @@ max-width:600px;
 margin:auto;
 display:flex;
 flex-direction:column;
-gap:15px;
+gap:16px;
 }
 
 input,textarea{
@@ -228,7 +249,7 @@ cursor:pointer;
 
 footer{
 text-align:center;
-padding:40px;
+padding:60px 20px 120px 20px;
 background:#04050a;
 }
 
@@ -238,17 +259,36 @@ margin:0 10px;
 text-decoration:none;
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
-bottom:20px;
+bottom:90px;
 right:20px;
 background:#25D366;
 padding:14px 20px;
 border-radius:40px;
 color:white;
 text-decoration:none;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.gallery{
+column-count:2;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+nav ul{
+display:none;
+}
+
 }
 
 </style>
@@ -259,7 +299,13 @@ text-decoration:none;
 
 <nav>
 
-<div class="logo">Poster Forge</div>
+<div class="logo">
+
+<img src="images/logo.png">
+
+<span>Poster Forge</span>
+
+</div>
 
 <ul>
 <li><a href="#services">Services</a></li>
@@ -273,9 +319,9 @@ text-decoration:none;
 
 <h1>Poster Forge Design Studio</h1>
 
-<p>Poster Forge creates modern promotional posters for coaching institutes, gyms and growing brands.</p>
+<p>We create premium promotional posters for coaching institutes, gyms and growing businesses.</p>
 
-<a href="#portfolio" class="btn">View Portfolio</a>
+<a href="#portfolio" class="hero-btn">View Portfolio</a>
 
 </section>
 
@@ -292,12 +338,12 @@ text-decoration:none;
 
 <div class="card">
 <h3>Business Promotions</h3>
-<p>High-impact promotional posters for local brands.</p>
+<p>Modern promotional creatives for local brands.</p>
 </div>
 
 <div class="card">
 <h3>Social Media Creatives</h3>
-<p>Modern Instagram promotional creatives.</p>
+<p>High-quality Instagram promotional graphics.</p>
 </div>
 
 </div>
@@ -322,6 +368,25 @@ text-decoration:none;
 
 </section>
 
+<section class="trust">
+
+<h2>Why Choose Poster Forge</h2>
+
+<p>✓ Premium Poster Designs</p>
+<p>✓ Fast Delivery</p>
+<p>✓ Affordable Pricing</p>
+<p>✓ Professional Quality</p>
+
+</section>
+
+<section class="cta">
+
+<h3>Need a Poster for Your Business?</h3>
+
+<a href="https://wa.me/919699716215">Start WhatsApp Chat</a>
+
+</section>
+
 <section id="contact">
 
 <h2>Send Inquiry</h2>
@@ -343,6 +408,8 @@ text-decoration:none;
 <footer>
 
 <p>Poster Forge Design Studio</p>
+
+<br>
 
 <a href="https://instagram.com/posterforgedesignstudio">Instagram</a>
 <a href="mailto:pratyushchauhan70@gmail.com">Email</a>
