@@ -20,9 +20,8 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#04050a;
+background:#05060a;
 color:white;
-overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -35,8 +34,8 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 8%;
-background:rgba(10,10,15,0.7);
-backdrop-filter:blur(12px);
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
@@ -47,13 +46,13 @@ gap:10px;
 }
 
 .logo img{
-width:40px;
+width:36px;
 border-radius:50%;
 }
 
 .logo span{
-font-weight:600;
 color:#4ade80;
+font-weight:600;
 }
 
 nav ul{
@@ -63,10 +62,9 @@ list-style:none;
 }
 
 nav ul a{
-text-decoration:none;
 color:white;
+text-decoration:none;
 font-size:14px;
-opacity:0.9;
 }
 
 /* HERO */
@@ -85,48 +83,54 @@ padding:0 20px;
 font-size:60px;
 margin-bottom:20px;
 
-background:linear-gradient(90deg,#4ade80,#22d3ee);
+background:linear-gradient(90deg,#4ade80,#22d3ee,#4ade80);
+background-size:200%;
+
+background-clip:text;
 -webkit-background-clip:text;
+
+color:transparent;
 -webkit-text-fill-color:transparent;
+
+animation:glowMove 6s linear infinite;
+}
+
+@keyframes glowMove{
+0%{background-position:0%}
+100%{background-position:200%}
 }
 
 .hero p{
-max-width:650px;
+max-width:600px;
 opacity:0.85;
 margin-bottom:30px;
 }
 
 .hero-btn{
 background:#4ade80;
-padding:16px 36px;
+padding:15px 35px;
 border-radius:8px;
-text-decoration:none;
 color:black;
-font-weight:500;
-transition:0.3s;
-}
-
-.hero-btn:hover{
-transform:scale(1.05);
+text-decoration:none;
 }
 
 /* SECTION */
 
 section{
-padding:110px 8%;
+padding:120px 8%;
 }
 
 h2{
 text-align:center;
-font-size:36px;
 margin-bottom:60px;
+font-size:36px;
 }
 
 /* SERVICES */
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 }
 
@@ -134,82 +138,99 @@ gap:30px;
 background:rgba(255,255,255,0.04);
 border:1px solid rgba(255,255,255,0.08);
 padding:35px;
-border-radius:16px;
-backdrop-filter:blur(8px);
-transition:0.4s;
+border-radius:14px;
 }
 
-.card:hover{
-transform:translateY(-10px);
-border:1px solid #4ade80;
-}
-
-/* PORTFOLIO */
+/* POSTER GALLERY */
 
 .gallery{
 column-count:3;
 column-gap:20px;
 }
 
-.gallery img{
-width:100%;
+.poster{
 margin-bottom:20px;
-border-radius:12px;
-cursor:pointer;
-transition:0.4s;
 }
 
-.gallery img:hover{
-transform:scale(1.04);
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
+.poster img{
 width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-z-index:2000;
-}
-
-.lightbox img{
-max-width:90%;
-max-height:90%;
 border-radius:10px;
+cursor:pointer;
+transition:0.3s;
 }
 
-/* TRUST */
+.poster img:hover{
+transform:scale(1.05);
+}
 
-.trust{
+/* WEBSITE PORTFOLIO */
+
+.websites{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.website-card{
+background:#0c0d14;
+padding:20px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.website-card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.website-card h3{
+margin-bottom:8px;
+}
+
+.website-card a{
+display:inline-block;
+margin-top:10px;
+background:#4ade80;
+padding:10px 20px;
+border-radius:6px;
+text-decoration:none;
+color:black;
+}
+
+/* PACKAGES */
+
+.packages{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+}
+
+.package{
+background:#0c0d14;
+padding:30px;
+border-radius:14px;
 text-align:center;
-max-width:600px;
-margin:auto;
 }
 
-.trust p{
+.price{
+font-size:28px;
+color:#4ade80;
 margin:10px 0;
-opacity:0.9;
 }
 
 /* CTA */
 
 .cta{
 background:linear-gradient(90deg,#4ade80,#22d3ee);
-text-align:center;
-padding:80px 20px;
+padding:80px 30px;
 border-radius:20px;
+text-align:center;
 }
 
 .cta h3{
-font-size:32px;
-margin-bottom:20px;
 color:black;
+margin-bottom:20px;
 }
 
 .cta a{
@@ -227,7 +248,7 @@ max-width:600px;
 margin:auto;
 display:flex;
 flex-direction:column;
-gap:16px;
+gap:15px;
 }
 
 input,textarea{
@@ -238,9 +259,9 @@ border:none;
 
 .submit{
 background:#25D366;
-border:none;
-padding:14px;
 color:white;
+padding:14px;
+border:none;
 border-radius:6px;
 cursor:pointer;
 }
@@ -249,8 +270,7 @@ cursor:pointer;
 
 footer{
 text-align:center;
-padding:60px 20px 120px 20px;
-background:#04050a;
+padding:80px 20px;
 }
 
 footer a{
@@ -259,21 +279,24 @@ margin:0 10px;
 text-decoration:none;
 }
 
-/* WHATSAPP */
+/* LIGHTBOX */
 
-.whatsapp{
+.lightbox{
+display:none;
 position:fixed;
-bottom:90px;
-right:20px;
-background:#25D366;
-padding:14px 20px;
-border-radius:40px;
-color:white;
-text-decoration:none;
-font-size:14px;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
 }
 
-/* MOBILE */
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
 
 @media(max-width:900px){
 
@@ -300,16 +323,14 @@ display:none;
 <nav>
 
 <div class="logo">
-
 <img src="images/logo.png">
-
 <span>Poster Forge</span>
-
 </div>
 
 <ul>
-<li><a href="#services">Services</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#portfolio">Posters</a></li>
+<li><a href="#websites">Websites</a></li>
+<li><a href="#packages">Packages</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -319,69 +340,92 @@ display:none;
 
 <h1>Poster Forge Design Studio</h1>
 
-<p>We create premium promotional posters for coaching institutes, gyms and growing businesses.</p>
+<p>Premium poster designs and one-page websites for growing businesses.</p>
 
-<a href="#portfolio" class="hero-btn">View Portfolio</a>
-
-</section>
-
-<section id="services">
-
-<h2>Services</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Coaching Posters</h3>
-<p>Admission posters designed to attract students.</p>
-</div>
-
-<div class="card">
-<h3>Business Promotions</h3>
-<p>Modern promotional creatives for local brands.</p>
-</div>
-
-<div class="card">
-<h3>Social Media Creatives</h3>
-<p>High-quality Instagram promotional graphics.</p>
-</div>
-
-</div>
+<a href="#portfolio" class="hero-btn">View Work</a>
 
 </section>
 
 <section id="portfolio">
 
-<h2>Portfolio</h2>
+<h2>Poster Portfolio</h2>
 
 <div class="gallery">
 
-<img src="images/coaching.png" onclick="openLightbox(this.src)">
-<img src="images/gym.png" onclick="openLightbox(this.src)">
-<img src="images/cafe.png" onclick="openLightbox(this.src)">
-<img src="images/realestate.png" onclick="openLightbox(this.src)">
-<img src="images/2.png" onclick="openLightbox(this.src)">
-<img src="images/3.png" onclick="openLightbox(this.src)">
-<img src="images/4.png" onclick="openLightbox(this.src)">
+<div class="poster"><img src="images/coaching.png"></div>
+<div class="poster"><img src="images/gym.png"></div>
+<div class="poster"><img src="images/cafe.png"></div>
+<div class="poster"><img src="images/realestate.png"></div>
+<div class="poster"><img src="images/2.png"></div>
+<div class="poster"><img src="images/3.png"></div>
+<div class="poster"><img src="images/4.png"></div>
 
 </div>
 
 </section>
 
-<section class="trust">
+<section id="websites">
 
-<h2>Why Choose Poster Forge</h2>
+<h2>Website Portfolio</h2>
 
-<p>✓ Premium Poster Designs</p>
-<p>✓ Fast Delivery</p>
-<p>✓ Affordable Pricing</p>
-<p>✓ Professional Quality</p>
+<div class="websites">
+
+<div class="website-card">
+<img src="images/demo1.jpg">
+<h3>Gym Website</h3>
+<p>One-page website for a fitness gym.</p>
+<a href="#">View Website</a>
+</div>
+
+<div class="website-card">
+<img src="images/demo2.jpg">
+<h3>Coaching Institute</h3>
+<p>Landing page for admissions.</p>
+<a href="#">View Website</a>
+</div>
+
+<div class="website-card">
+<img src="images/demo3.jpg">
+<h3>Cafe Website</h3>
+<p>Modern cafe landing page.</p>
+<a href="#">View Website</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="packages">
+
+<h2>Poster Packages</h2>
+
+<div class="packages">
+
+<div class="package">
+<h3>Basic</h3>
+<div class="price">₹499</div>
+<p>1 Poster</p>
+</div>
+
+<div class="package">
+<h3>Business</h3>
+<div class="price">₹999</div>
+<p>2 Posters</p>
+</div>
+
+<div class="package">
+<h3>Monthly</h3>
+<div class="price">₹3999</div>
+<p>12 Posters</p>
+</div>
+
+</div>
 
 </section>
 
 <section class="cta">
 
-<h3>Need a Poster for Your Business?</h3>
+<h3>Need a Poster or Website for Your Business?</h3>
 
 <a href="https://wa.me/919699716215">Start WhatsApp Chat</a>
 
@@ -412,39 +456,25 @@ display:none;
 <br>
 
 <a href="https://instagram.com/posterforgedesignstudio">Instagram</a>
+
 <a href="mailto:pratyushchauhan70@gmail.com">Email</a>
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919699716215">WhatsApp</a>
-
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<img id="lightbox-img">
-</div>
-
 <script>
-
-function openLightbox(src){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightbox-img").src=src;
-}
-
-function closeLightbox(){
-document.getElementById("lightbox").style.display="none";
-}
 
 function sendToWhatsApp(){
 
-let name=document.getElementById("name").value;
-let email=document.getElementById("email").value;
-let message=document.getElementById("message").value;
+let name=document.getElementById("name").value
+let email=document.getElementById("email").value
+let message=document.getElementById("message").value
 
 let text="New Client Inquiry:%0A%0A"+
 "Name: "+name+"%0A"+
 "Email: "+email+"%0A"+
-"Requirement: "+message;
+"Requirement: "+message
 
-window.open("https://wa.me/919699716215?text="+text,"_blank");
+window.open("https://wa.me/919699716215?text="+text)
 
 }
 
