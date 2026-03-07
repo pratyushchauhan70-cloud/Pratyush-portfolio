@@ -7,7 +7,7 @@
 
 <title>Pixel Forge Studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,17 +15,46 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+font-family:'Inter',sans-serif;
 }
 
 body{
-background:#05060a;
+background:#050505;
 color:white;
 overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
-/* NAVBAR */
+/* Animated gradient background */
+
+body::before{
+content:'';
+position:fixed;
+width:800px;
+height:800px;
+background:radial-gradient(circle,#00ff9d33,transparent);
+top:-200px;
+left:-200px;
+filter:blur(140px);
+z-index:-1;
+animation:float 8s infinite alternate ease-in-out;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+100%{transform:translateY(80px)}
+}
+
+section{
+padding:120px 8%;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+/* Navbar */
 
 nav{
 position:fixed;
@@ -34,26 +63,21 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 8%;
+padding:20px 8%;
 background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-z-index:1000;
+backdrop-filter:blur(12px);
+z-index:999;
 }
 
 .logo{
 display:flex;
 align-items:center;
 gap:10px;
+font-weight:600;
 }
 
 .logo img{
-width:36px;
-border-radius:50%;
-}
-
-.logo span{
-color:#4ade80;
-font-weight:600;
+height:36px;
 }
 
 nav ul{
@@ -62,248 +86,138 @@ gap:30px;
 list-style:none;
 }
 
-nav ul a{
-color:white;
+nav a{
 text-decoration:none;
+color:white;
 font-size:14px;
+opacity:.8;
 }
 
-/* HERO */
+nav a:hover{
+opacity:1;
+}
+
+/* Hero */
 
 .hero{
 height:100vh;
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
-padding:0 20px;
 }
 
 .hero h1{
-font-size:60px;
-margin-bottom:20px;
-
-background:linear-gradient(90deg,#4ade80,#22d3ee,#4ade80);
-background-size:200%;
-
-background-clip:text;
+font-size:64px;
+font-weight:700;
+background:linear-gradient(90deg,#fff,#00ff9d);
 -webkit-background-clip:text;
-
 color:transparent;
--webkit-text-fill-color:transparent;
-
-animation:glowMove 6s linear infinite;
-}
-
-@keyframes glowMove{
-0%{background-position:0%}
-100%{background-position:200%}
 }
 
 .hero p{
+margin-top:20px;
 max-width:600px;
-opacity:0.85;
-margin-bottom:30px;
+color:#aaa;
 }
 
-.hero-btn{
-background:#4ade80;
-padding:15px 35px;
-border-radius:8px;
+.btn{
+margin-top:35px;
+padding:14px 30px;
+border-radius:40px;
+background:linear-gradient(90deg,#00ff9d,#00ffa6);
 color:black;
 text-decoration:none;
+font-weight:600;
+transition:.3s;
 }
 
-/* SECTION */
-
-section{
-padding:120px 8%;
-opacity:0;
-transform:translateY(40px);
-transition:all 1s ease;
-}
-
-section.visible{
-opacity:1;
-transform:translateY(0);
-}
-
-h2{
-text-align:center;
-margin-bottom:60px;
-font-size:36px;
-}
-
-/* SERVICES */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.card{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-padding:35px;
-border-radius:14px;
-}
-
-/* POSTER GALLERY */
-
-.gallery{
-column-count:3;
-column-gap:20px;
-}
-
-.poster{
-margin-bottom:20px;
-}
-
-.poster img{
-width:100%;
-border-radius:10px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.poster img:hover{
+.btn:hover{
 transform:scale(1.05);
 }
 
-/* WEBSITE PORTFOLIO */
+/* Portfolio */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+border-radius:12px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.06);
+}
+
+/* Website cards */
 
 .websites{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.website-card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:14px;
+backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+.website-card:hover{
+transform:translateY(-6px);
+}
+
+/* Pricing */
+
+.pricing{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
 
-.website-card{
-background:#0c0d14;
-padding:20px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,0.08);
-}
-
-.website-card img{
-width:100%;
-border-radius:10px;
-margin-bottom:10px;
-}
-
-.website-card h3{
-margin-bottom:8px;
-}
-
-.website-card a{
-display:inline-block;
-margin-top:10px;
-background:#4ade80;
-padding:10px 20px;
-border-radius:6px;
-text-decoration:none;
-color:black;
-}
-
-/* PACKAGES */
-
-.packages{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:30px;
-}
-
-.package{
-background:#0c0d14;
-padding:30px;
+.card{
+background:rgba(255,255,255,0.05);
+padding:35px;
 border-radius:14px;
 text-align:center;
 }
 
 .price{
-font-size:28px;
-color:#4ade80;
-margin:10px 0;
+font-size:30px;
+color:#00ff9d;
+margin:15px 0;
 }
 
-/* CTA */
+/* Contact */
 
-.cta{
-background:linear-gradient(90deg,#4ade80,#22d3ee);
-padding:80px 30px;
-border-radius:20px;
+.contact{
 text-align:center;
 }
 
-.cta h3{
-color:black;
-margin-bottom:20px;
-}
-
-.cta a{
-background:black;
-color:white;
-padding:14px 30px;
-border-radius:8px;
-text-decoration:none;
-}
-
-/* CONTACT */
-
-form{
-max-width:600px;
-margin:auto;
+.contact-buttons{
 display:flex;
-flex-direction:column;
-gap:15px;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:30px;
 }
 
-input,textarea{
-padding:14px;
-border-radius:6px;
-border:none;
-}
-
-.submit{
-background:#25D366;
-color:white;
-padding:14px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-
-/* FOOTER */
+/* Footer */
 
 footer{
 text-align:center;
-padding:80px 20px;
-}
-
-footer a{
-color:#4ade80;
-margin:0 10px;
-text-decoration:none;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.gallery{
-column-count:2;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-nav ul{
-display:none;
-}
-
+padding:40px;
+color:#777;
+border-top:1px solid #111;
+margin-top:80px;
 }
 
 </style>
@@ -315,15 +229,14 @@ display:none;
 <nav>
 
 <div class="logo">
-<img src="images/logo.png">
-<span>Pixel Forge</span>
+<img src="logo.png">
+Pixel Forge
 </div>
 
 <ul>
-<li><a href="#portfolio">Posters</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#websites">Websites</a></li>
-<li><a href="#poster-packages">Poster Packages</a></li>
-<li><a href="#website-packages">Website Packages</a></li>
+<li><a href="#pricing">Pricing</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -333,25 +246,31 @@ display:none;
 
 <h1>Pixel Forge Studio</h1>
 
-<p>Modern poster designs and one-page websites for growing businesses.</p>
+<p>
+Modern poster designs and business websites for gyms, restaurants, coaching institutes and growing brands.
+</p>
 
-<a href="#portfolio" class="hero-btn">View Our Work</a>
+<a href="#portfolio" class="btn">Explore Portfolio</a>
 
 </section>
 
 <section id="portfolio">
 
+<div class="container">
+
 <h2>Poster Portfolio</h2>
 
 <div class="gallery">
 
-<div class="poster"><img src="images/coaching.png"></div>
-<div class="poster"><img src="images/gym.png"></div>
-<div class="poster"><img src="images/cafe.png"></div>
-<div class="poster"><img src="images/realestate.png"></div>
-<div class="poster"><img src="images/2.png"></div>
-<div class="poster"><img src="images/3.png"></div>
-<div class="poster"><img src="images/4.png"></div>
+<img src="images/cafe.png">
+<img src="images/coaching.png">
+<img src="images/gym.png">
+<img src="images/realestate.png">
+<img src="images/2.png">
+<img src="images/3.png">
+<img src="images/4.png">
+
+</div>
 
 </div>
 
@@ -359,165 +278,124 @@ display:none;
 
 <section id="websites">
 
-<h2>Website Portfolio</h2>
+<div class="container">
+
+<h2>Business Websites</h2>
 
 <div class="websites">
 
 <div class="website-card">
-<img src="images/demo1.jpg">
 <h3>Gym Website</h3>
-<a href="/gym-website">View Website</a>
+<p>Landing page designed for fitness businesses.</p>
 </div>
 
 <div class="website-card">
-<img src="images/demo2.jpg">
-<h3>Coaching Website</h3>
-<a href="#">View Website</a>
-</div>
-
-<div class="website-card">
-<img src="images/demo3.jpg">
 <h3>Restaurant Website</h3>
-<a href="#">View Website</a>
+<p>Modern restaurant showcase with menu.</p>
+</div>
+
+<div class="website-card">
+<h3>Coaching Website</h3>
+<p>Professional coaching institute website.</p>
+</div>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="poster-packages">
+<section id="pricing">
+
+<div class="container">
 
 <h2>Poster Packages</h2>
 
-<div class="packages">
+<div class="pricing">
 
-<div class="package">
-<h3>Basic</h3>
+<div class="card">
+<h3>Starter</h3>
+<div class="price">₹199</div>
+<p>1 Poster</p>
+<p>Social Media Ready</p>
+</div>
+
+<div class="card">
+<h3>Growth</h3>
 <div class="price">₹499</div>
-<p>1 Poster Design</p>
+<p>3 Posters</p>
+<p>Business Promotion</p>
 </div>
 
-<div class="package">
-<h3>Business</h3>
+<div class="card">
+<h3>Pro</h3>
 <div class="price">₹999</div>
-<p>2 Poster Designs</p>
-</div>
-
-<div class="package">
-<h3>Monthly</h3>
-<div class="price">₹3999</div>
-<p>12 Poster Designs</p>
+<p>7 Posters</p>
+<p>Promotion Pack</p>
 </div>
 
 </div>
 
-</section>
-
-<section id="website-packages">
+<br><br>
 
 <h2>Website Packages</h2>
 
-<div class="packages">
+<div class="pricing">
 
-<div class="package">
-<h3>Starter Website</h3>
+<div class="card">
+<h3>Basic Website</h3>
 <div class="price">₹999</div>
-<p>1 Page Website</p>
+<p>One Page Website</p>
 <p>Mobile Responsive</p>
 </div>
 
-<div class="package">
+<div class="card">
 <h3>Business Website</h3>
 <div class="price">₹1999</div>
-<p>Professional Design</p>
-<p>WhatsApp Contact</p>
+<p>3 Page Website</p>
+<p>Modern Design</p>
 </div>
 
-<div class="package">
+<div class="card">
 <h3>Premium Website</h3>
-<div class="price">₹2999</div>
-<p>Custom Design</p>
-<p>Gallery + Map</p>
+<div class="price">₹3999</div>
+<p>Full Business Website</p>
+<p>Portfolio + Contact</p>
 </div>
 
 </div>
 
-</section>
-
-<section class="cta">
-
-<h3>Need a Poster or Website?</h3>
-
-<a href="https://wa.me/919699716215">Start WhatsApp Chat</a>
+</div>
 
 </section>
 
 <section id="contact">
 
-<h2>Send Inquiry</h2>
+<div class="container contact">
 
-<form onsubmit="sendToWhatsApp(); return false;">
+<h2>Start Your Project</h2>
 
-<input type="text" id="name" placeholder="Your Name" required>
-<input type="email" id="email" placeholder="Your Email" required>
-<textarea id="message" placeholder="Describe your requirement"></textarea>
+<p>Contact Pixel Forge to design posters or websites for your business.</p>
 
-<button class="submit">Send on WhatsApp</button>
+<div class="contact-buttons">
 
-</form>
+<a class="btn" href="https://wa.me/919699716215">WhatsApp</a>
+
+<a class="btn" href="mailto:prakyushchauhan70@gmail.com">Email</a>
+
+<a class="btn" href="https://instagram.com/pixelforge.studio_">Instagram</a>
+
+</div>
+
+</div>
 
 </section>
 
 <footer>
 
-<p>©️ Pixel Forge Studio</p>
-
-<br>
-
-<a href="https://instagram.com/posterforgedesignstudio">Instagram</a>
-<a href="mailto:pratyushchauhan70@gmail.com">Email</a>
+©️ 2026 Pixel Forge Studio
 
 </footer>
-
-<script>
-
-function sendToWhatsApp(){
-
-let name=document.getElementById("name").value
-let email=document.getElementById("email").value
-let message=document.getElementById("message").value
-
-let text="New Client Inquiry:%0A%0A"+
-"Name: "+name+"%0A"+
-"Email: "+email+"%0A"+
-"Requirement: "+message
-
-window.open("https://wa.me/919699716215?text="+text)
-
-}
-
-const sections=document.querySelectorAll("section")
-
-function reveal(){
-
-const trigger=window.innerHeight*0.85
-
-sections.forEach(sec=>{
-
-const top=sec.getBoundingClientRect().top
-
-if(top<trigger){
-sec.classList.add("visible")
-}
-
-})
-
-}
-
-window.addEventListener("scroll",reveal)
-reveal()
-
-</script>
 
 </body>
 </html>
