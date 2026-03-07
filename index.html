@@ -22,6 +22,7 @@ scroll-behavior:smooth;
 body{
 background:#05060a;
 color:white;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -118,6 +119,14 @@ text-decoration:none;
 
 section{
 padding:120px 8%;
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+section.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 h2{
@@ -330,7 +339,8 @@ display:none;
 <ul>
 <li><a href="#portfolio">Posters</a></li>
 <li><a href="#websites">Websites</a></li>
-<li><a href="#packages">Packages</a></li>
+<li><a href="#poster-packages">Poster Packages</a></li>
+<li><a href="#website-packages">Website Packages</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -340,7 +350,7 @@ display:none;
 
 <h1>Poster Forge Design Studio</h1>
 
-<p>Premium poster designs and one-page websites for growing businesses.</p>
+<p>Premium posters and one-page websites for growing businesses.</p>
 
 <a href="#portfolio" class="hero-btn">View Work</a>
 
@@ -373,21 +383,18 @@ display:none;
 <div class="website-card">
 <img src="images/demo1.jpg">
 <h3>Gym Website</h3>
-<p>One-page website for a fitness gym.</p>
 <a href="#">View Website</a>
 </div>
 
 <div class="website-card">
 <img src="images/demo2.jpg">
-<h3>Coaching Institute</h3>
-<p>Landing page for admissions.</p>
+<h3>Coaching Website</h3>
 <a href="#">View Website</a>
 </div>
 
 <div class="website-card">
 <img src="images/demo3.jpg">
 <h3>Cafe Website</h3>
-<p>Modern cafe landing page.</p>
 <a href="#">View Website</a>
 </div>
 
@@ -395,7 +402,7 @@ display:none;
 
 </section>
 
-<section id="packages">
+<section id="poster-packages">
 
 <h2>Poster Packages</h2>
 
@@ -423,9 +430,40 @@ display:none;
 
 </section>
 
+<section id="website-packages">
+
+<h2>Website Packages</h2>
+
+<div class="packages">
+
+<div class="package">
+<h3>Starter Website</h3>
+<div class="price">₹999</div>
+<p>1 Page Website</p>
+<p>Mobile Responsive</p>
+</div>
+
+<div class="package">
+<h3>Business Website</h3>
+<div class="price">₹1999</div>
+<p>Professional Design</p>
+<p>WhatsApp Contact</p>
+</div>
+
+<div class="package">
+<h3>Premium Website</h3>
+<div class="price">₹2999</div>
+<p>Custom Design</p>
+<p>Gallery + Map</p>
+</div>
+
+</div>
+
+</section>
+
 <section class="cta">
 
-<h3>Need a Poster or Website for Your Business?</h3>
+<h3>Need a Poster or Website?</h3>
 
 <a href="https://wa.me/919699716215">Start WhatsApp Chat</a>
 
@@ -438,10 +476,8 @@ display:none;
 <form onsubmit="sendToWhatsApp(); return false;">
 
 <input type="text" id="name" placeholder="Your Name" required>
-
 <input type="email" id="email" placeholder="Your Email" required>
-
-<textarea id="message" placeholder="Describe your requirement" required></textarea>
+<textarea id="message" placeholder="Describe your requirement"></textarea>
 
 <button class="submit">Send on WhatsApp</button>
 
@@ -456,7 +492,6 @@ display:none;
 <br>
 
 <a href="https://instagram.com/posterforgedesignstudio">Instagram</a>
-
 <a href="mailto:pratyushchauhan70@gmail.com">Email</a>
 
 </footer>
@@ -477,6 +512,29 @@ let text="New Client Inquiry:%0A%0A"+
 window.open("https://wa.me/919699716215?text="+text)
 
 }
+
+/* SCROLL ANIMATION */
+
+const sections=document.querySelectorAll("section")
+
+function reveal(){
+
+const trigger=window.innerHeight*0.85
+
+sections.forEach(sec=>{
+
+const top=sec.getBoundingClientRect().top
+
+if(top<trigger){
+sec.classList.add("visible")
+}
+
+})
+
+}
+
+window.addEventListener("scroll",reveal)
+reveal()
 
 </script>
 
