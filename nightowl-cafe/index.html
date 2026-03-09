@@ -7,7 +7,7 @@
 
 <title>Pixel Forge Digital Studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,26 +16,27 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Poppins;
+scroll-behavior:smooth;
 }
 
 body{
-background:#0a0a0a;
+background:#050505;
 color:white;
 }
 
-section{
-padding:80px 10%;
-}
+/* NAVBAR */
 
 header{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 10%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
-background:#000;
-position:sticky;
-top:0;
-z-index:100;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 .logo{
@@ -43,150 +44,191 @@ display:flex;
 align-items:center;
 gap:10px;
 font-weight:600;
+font-size:18px;
 }
 
 .logo img{
-width:40px;
+width:36px;
 }
 
 nav a{
 color:white;
-margin-left:20px;
+margin-left:25px;
 text-decoration:none;
 font-size:14px;
+opacity:0.8;
 }
 
+nav a:hover{
+opacity:1;
+}
+
+/* HERO */
+
 .hero{
-height:80vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(#000000cc,#000000cc),
-url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4");
-background-size:cover;
-background-position:center;
+padding:0 10%;
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:15px;
+font-size:60px;
+background:linear-gradient(90deg,#00ffa6,#00d9ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
-color:#ccc;
+margin-top:15px;
 max-width:600px;
+color:#aaa;
 }
 
 .hero-btn{
-margin-top:25px;
-padding:14px 28px;
-background:#00ff9d;
-border-radius:30px;
+margin-top:30px;
+padding:14px 30px;
+background:#00ffa6;
+border-radius:40px;
 color:black;
-text-decoration:none;
 font-weight:600;
+text-decoration:none;
 }
 
-.process{
+/* SECTIONS */
+
+section{
+padding:120px 10%;
+}
+
+/* SERVICES */
+
+.services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-margin-top:40px;
+margin-top:50px;
 }
 
-.process-card{
-background:#151515;
-padding:30px;
-border-radius:12px;
+.service{
+background:#111;
+padding:35px;
+border-radius:14px;
+transition:0.4s;
 }
+
+.service:hover{
+transform:translateY(-10px);
+background:#151515;
+}
+
+/* PORTFOLIO */
 
 .portfolio-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:50px;
 }
 
 .project{
-background:#151515;
+background:#111;
 padding:25px;
-border-radius:12px;
+border-radius:14px;
+transition:0.4s;
+}
+
+.project:hover{
+transform:translateY(-10px);
+background:#151515;
 }
 
 .project a{
 display:inline-block;
 margin-top:10px;
-color:#00ff9d;
+color:#00ffa6;
 text-decoration:none;
 }
+
+/* PRICING */
 
 .pricing{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-margin-top:40px;
+margin-top:50px;
 }
 
 .price-card{
-background:#151515;
-padding:30px;
-border-radius:12px;
+background:#111;
+padding:35px;
+border-radius:14px;
 text-align:center;
 }
 
 .price{
-font-size:30px;
+font-size:32px;
 margin:15px 0;
 }
 
-.contact{
+/* CTA */
+
+.cta{
 text-align:center;
+background:#0c0c0c;
+border-radius:16px;
+padding:60px;
 }
 
-.contact a{
+.cta a{
 display:inline-block;
-margin:10px;
-padding:12px 24px;
-border-radius:25px;
-background:#00ff9d;
+margin-top:20px;
+padding:14px 30px;
+background:#00ffa6;
+border-radius:40px;
 color:black;
 text-decoration:none;
+font-weight:600;
 }
+
+/* FOOTER */
 
 footer{
 text-align:center;
 padding:40px;
-background:#000;
 margin-top:60px;
 color:#777;
+background:black;
 }
 
-/* WhatsApp Button */
+/* WHATSAPP BUTTON */
 
-.whatsapp-btn{
+.whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:white;
 padding:14px 18px;
 border-radius:30px;
+color:white;
 text-decoration:none;
 font-weight:600;
-box-shadow:0 10px 20px rgba(0,0,0,0.4);
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
 }
+
+/* MOBILE */
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:34px;
+font-size:38px;
 }
 
-.whatsapp-btn{
-padding:12px 16px;
-font-size:14px;
+section{
+padding:100px 8%;
 }
 
 }
@@ -205,11 +247,10 @@ Pixel Forge
 </div>
 
 <nav>
-
+<a href="#services">Services</a>
 <a href="#portfolio">Portfolio</a>
 <a href="#pricing">Pricing</a>
-<a href="#contact">Get Design</a>
-
+<a href="#contact">Contact</a>
 </nav>
 
 </header>
@@ -218,31 +259,31 @@ Pixel Forge
 
 <h1>Pixel Forge Digital Studio</h1>
 
-<p>Modern poster design and simple websites for cafes, gyms and growing businesses.</p>
+<p>We design modern promotional posters and simple business websites for growing brands.</p>
 
 <a class="hero-btn" href="#portfolio">View Portfolio</a>
 
 </section>
 
-<section>
+<section id="services">
 
-<h2>How It Works</h2>
+<h2>Our Services</h2>
 
-<div class="process">
+<div class="services">
 
-<div class="process-card">
-<h3>1. Send Requirement</h3>
-<p>Tell us about your business and design idea.</p>
+<div class="service">
+<h3>Poster Design</h3>
+<p>High quality promotional posters for cafes, gyms and businesses.</p>
 </div>
 
-<div class="process-card">
-<h3>2. Design Creation</h3>
-<p>We create modern promotional designs.</p>
+<div class="service">
+<h3>Business Websites</h3>
+<p>Modern websites that help businesses attract customers online.</p>
 </div>
 
-<div class="process-card">
-<h3>3. Receive Your Design</h3>
-<p>You get the final design ready for promotion.</p>
+<div class="service">
+<h3>Social Media Design</h3>
+<p>Creative visuals for Instagram marketing and branding.</p>
 </div>
 
 </div>
@@ -251,23 +292,23 @@ Pixel Forge
 
 <section id="portfolio">
 
-<h2>Portfolio</h2>
+<h2>Featured Projects</h2>
 
 <div class="portfolio-grid">
 
 <div class="project">
 <h3>Gym Promotion Poster</h3>
-<p>Social media design for fitness brand.</p>
+<p>Instagram poster for fitness marketing.</p>
 </div>
 
 <div class="project">
 <h3>Restaurant Promotion</h3>
-<p>Instagram poster for restaurant offers.</p>
+<p>Modern social media poster for restaurants.</p>
 </div>
 
 <div class="project">
 <h3>Night Owl Cafe</h3>
-<p>Concept website design for cafe business.</p>
+<p>Concept website design for a cafe business.</p>
 
 <a href="/nightowl-cafe" target="_blank">
 View Demo Website
@@ -286,52 +327,34 @@ View Demo Website
 <div class="pricing">
 
 <div class="price-card">
-
 <h3>Starter</h3>
-
 <div class="price">₹199</div>
-
 <p>1 Poster Design</p>
-
 </div>
 
 <div class="price-card">
-
 <h3>Growth</h3>
-
 <div class="price">₹499</div>
-
 <p>3 Poster Designs</p>
-
 </div>
 
 <div class="price-card">
-
 <h3>Business</h3>
-
 <div class="price">₹1500</div>
-
 <p>10 Poster Designs</p>
-
 </div>
 
 </div>
 
 </section>
 
-<section class="contact" id="contact">
+<section class="cta" id="contact">
 
-<h2>Start Your Design</h2>
+<h2>Start Your Design Project</h2>
 
-<p>Contact Pixel Forge Digital Studio</p>
+<p>Contact Pixel Forge Digital Studio to create modern designs for your business.</p>
 
-<br>
-
-<a href="https://wa.me/919699716215">WhatsApp</a>
-
-<a href="mailto:prakyushchauhan70@gmail.com">Email</a>
-
-<a href="https://www.instagram.com/pixelforge.studio_" target="_blank">Instagram</a>
+<a href="https://wa.me/919699716215">Start on WhatsApp</a>
 
 </section>
 
@@ -341,8 +364,8 @@ View Demo Website
 
 </footer>
 
-<a class="whatsapp-btn" href="https://wa.me/919699716215">
-Chat on WhatsApp
+<a class="whatsapp" href="https://wa.me/919699716215">
+WhatsApp
 </a>
 
 </body>
