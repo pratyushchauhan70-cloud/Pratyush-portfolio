@@ -14,7 +14,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* glowing background */
+/* gradient glow background */
 
 body::before{
 content:'';
@@ -40,7 +40,7 @@ opacity:.15;
 z-index:-1;
 }
 
-/* navbar */
+/* NAVBAR */
 
 nav{
 display:flex;
@@ -52,19 +52,18 @@ backdrop-filter:blur(20px);
 border-bottom:1px solid rgba(255,255,255,.05);
 position:sticky;
 top:0;
-z-index:100;
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:12px;
+gap:10px;
 font-size:20px;
 font-weight:600;
 }
 
 .logo img{
-width:38px;
+width:36px;
 }
 
 nav a{
@@ -78,7 +77,7 @@ nav a:hover{
 opacity:1;
 }
 
-/* hero */
+/* HERO */
 
 .hero{
 padding:160px 8%;
@@ -104,32 +103,45 @@ font-size:19px;
 opacity:.7;
 }
 
-.hero-btn{
+/* CONTACT BUTTONS */
+
+.buttons{
 margin-top:40px;
-display:inline-block;
-padding:18px 40px;
-border-radius:50px;
-background:linear-gradient(90deg,#00ffa6,#3a7bff);
-color:black;
-font-weight:600;
-text-decoration:none;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
-/* sections */
+.btn{
+padding:16px 34px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+}
+
+.whatsapp{
+background:#00ffa6;
+color:black;
+}
+
+.instagram{
+background:#3a7bff;
+color:white;
+}
+
+.email{
+background:#222;
+color:white;
+}
+
+/* SECTIONS */
 
 section{
 padding:120px 8%;
-opacity:0;
-transform:translateY(60px);
-transition:all .8s ease;
 }
 
-section.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* cards */
+/* CARDS */
 
 .grid{
 display:grid;
@@ -147,72 +159,55 @@ transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-8px);
 }
 
-/* portfolio */
+/* PORTFOLIO */
 
 .projects{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:40px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
 margin-top:50px;
 }
 
 .project{
-background:rgba(255,255,255,.03);
-border:1px solid rgba(255,255,255,.06);
 border-radius:20px;
 overflow:hidden;
+border:1px solid rgba(255,255,255,.06);
+background:rgba(255,255,255,.03);
 transition:.4s;
-}
-
-.project:hover{
-transform:translateY(-12px);
-box-shadow:0 25px 50px rgba(0,0,0,.6);
 }
 
 .project img{
 width:100%;
+display:block;
 }
 
-.project-content{
-padding:28px;
+.project:hover{
+transform:scale(1.05);
 }
 
-.project-content h3{
-margin-bottom:10px;
+/* TESTIMONIAL */
+
+.testimonial{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
 }
 
-.project-content p{
-opacity:.7;
-line-height:1.6;
-font-size:14px;
+.testimonial img{
+width:100%;
+border-radius:20px;
 }
 
-/* CTA */
-
-.cta{
-text-align:center;
+.testimonial-text p{
+opacity:.75;
+line-height:1.7;
 }
 
-.cta h2{
-font-size:50px;
-margin-bottom:20px;
-}
-
-.cta a{
-margin-top:30px;
-display:inline-block;
-padding:18px 44px;
-border-radius:50px;
-background:#00ffa6;
-color:black;
-font-weight:600;
-text-decoration:none;
-}
-
-/* footer */
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -228,6 +223,10 @@ margin-top:100px;
 font-size:42px;
 }
 
+.testimonial{
+grid-template-columns:1fr;
+}
+
 }
 
 </style></head><body><nav><div class="logo">
@@ -237,47 +236,36 @@ Pixel Forge
 <a href="#">Portfolio</a>
 <a href="#">Services</a>
 <a href="#">Contact</a>
-</div></nav><section class="hero"><h1>
+</div></nav><!-- HERO --><section class="hero"><h1>
 Design that turns <span>ideas into brands</span>
 </h1><p>
-A premium digital design studio helping creators, startups and businesses build powerful visual brands.
-</p><a href="https://wa.me/919999999999" class="hero-btn">
-Start Your Design
-</a></section><section><h2 style="font-size:48px;">How It Works</h2><div class="grid"><div class="card">
+A premium design studio helping creators and businesses build powerful digital brands.
+</p><div class="buttons"><a href="https://wa.me/919699716215" class="btn whatsapp">
+WhatsApp
+</a><a href="https://instagram.com/pixelforge.studio_" class="btn instagram">
+Instagram
+</a><a href="mailto:pratyushchauhan70@gmail.com" class="btn email">
+Email
+</a></div></section><!-- HOW IT WORKS --><section><h2 style="font-size:48px;">How It Works</h2><div class="grid"><div class="card">
 <h3>1. Tell Your Requirement</h3>
-<p>Share your idea or design requirement with us.</p>
+<p>Share your design requirement or idea.</p>
 </div><div class="card">
-<h3>2. We Create the Design</h3>
-<p>Our team designs premium visuals for your brand.</p>
+<h3>2. We Design</h3>
+<p>We create premium visuals for your brand.</p>
 </div><div class="card">
-<h3>3. Receive Your Design</h3>
-<p>You get the final design ready for promotion.</p>
-</div></div></section><section><h2 style="font-size:48px;">Selected Work</h2><div class="projects"><div class="project"><img src="trading.png"><div class="project-content"><h3>Indian Options Trading Course</h3><p>
-Instagram promotional poster designed for a trading education program using financial visual style and clear typography.
-</p></div></div></div></section><section class="cta"><h2>Ready to build your brand?</h2><p style="opacity:.7;">Let’s create something powerful for your business.</p><a href="https://wa.me/919999999999">
-Start Your Design
-</a></section><footer>©️ 2026 Pixel Forge Digital Studio
+<h3>3. Delivery</h3>
+<p>You receive ready-to-use professional designs.</p>
+</div></div></section><!-- POSTER PORTFOLIO --><section><h2 style="font-size:48px;">Poster Design Portfolio</h2><div class="projects"><div class="project">
+<img src="poster1.png">
+</div><div class="project">
+<img src="poster2.png">
+</div><div class="project">
+<img src="poster3.png">
+</div></div></section><!-- WEBSITE PORTFOLIO --><section><h2 style="font-size:48px;">Website Projects</h2><div class="projects"><div class="project">
+<img src="nightowl.png">
+</div></div></section><!-- TESTIMONIAL --><section><h2 style="font-size:48px;">Client Work</h2><div class="testimonial"><img src="trading.png"><div class="testimonial-text"><h3>Trading Course Promotion Poster</h3><p>
+This promotional poster was designed for a trading educator launching an Indian Options Trading course.  
+The goal was to create a professional financial design with strong visual hierarchy and clear course highlights.
+</p></div></div></section><footer>©️ 2026 Pixel Forge Digital Studio
 
-</footer><script>
-
-/* scroll animation */
-
-const sections=document.querySelectorAll("section");
-
-window.addEventListener("scroll",()=>{
-
-sections.forEach(section=>{
-
-const top=section.getBoundingClientRect().top;
-
-if(top<window.innerHeight-100){
-
-section.classList.add("show");
-
-}
-
-});
-
-});
-
-</script></body></html>
+</footer></body></html>
