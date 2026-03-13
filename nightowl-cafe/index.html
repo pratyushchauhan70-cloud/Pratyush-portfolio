@@ -1,302 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Pixel Forge Digital Studio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Night Owl Cafe</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0b0b0b;
+background:#0c0c0c;
 color:white;
 }
+
+/* NAVBAR */
 
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 8%;
-background:#000;
-position:sticky;
-top:0;
-z-index:100;
+background:black;
+border-bottom:1px solid #222;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-weight:600;
-}
-
-.logo img{
-width:40px;
+header h1{
+font-size:22px;
 }
 
 nav a{
-color:white;
-text-decoration:none;
 margin-left:25px;
-font-size:14px;
+text-decoration:none;
+color:#aaa;
 }
 
-section{
-padding:90px 8%;
+nav a:hover{
+color:white;
 }
+
+/* HERO */
 
 .hero{
-height:80vh;
+height:85vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(#000000cc,#000000cc),
-url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4");
-background-size:cover;
-background-position:center;
+background:url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5") center/cover;
 }
 
-.hero h1{
-font-size:48px;
-margin-bottom:10px;
+.hero h2{
+font-size:54px;
 }
 
 .hero p{
-color:#ccc;
-max-width:600px;
+margin-top:12px;
+color:#ddd;
 }
 
-.hero-btn{
-margin-top:25px;
+.hero button{
+margin-top:20px;
 padding:14px 28px;
-background:#00ff9d;
+border:none;
 border-radius:30px;
-color:black;
-text-decoration:none;
+background:#ff8c00;
+color:white;
 font-weight:600;
+cursor:pointer;
 }
 
-.portfolio-grid{
+/* SECTION */
+
+section{
+padding:80px 10%;
+text-align:center;
+}
+
+.menu{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:30px;
 }
 
-.project{
-background:#151515;
+.card{
+background:#161616;
 padding:25px;
 border-radius:12px;
+border:1px solid #333;
 }
 
-.project a{
-display:inline-block;
-margin-top:10px;
-color:#00ff9d;
-text-decoration:none;
+/* ABOUT */
+
+.about{
+max-width:700px;
+margin:auto;
+color:#bbb;
 }
 
-.pricing{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
-}
-
-.price-card{
-background:#151515;
-padding:30px;
-border-radius:12px;
-text-align:center;
-}
-
-.price{
-font-size:30px;
-margin:15px 0;
-}
+/* CONTACT */
 
 .contact{
-text-align:center;
+margin-top:30px;
 }
 
-.contact a{
-display:inline-block;
-margin:10px;
-padding:12px 24px;
-border-radius:25px;
-background:#00ff9d;
-color:black;
-text-decoration:none;
+.contact p{
+margin:8px 0;
 }
+
+/* FOOTER */
 
 footer{
 text-align:center;
-padding:40px;
-background:#000;
+padding:30px;
+background:black;
+margin-top:50px;
 color:#777;
-margin-top:60px;
 }
 
-/* FIXED WHATSAPP BUTTON */
+</style></head><body><header><h1>The Night Owl Cafe</h1><nav>
+<a href="#menu">Menu</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav></header><section class="hero"><h2>Late Night Cafe in Gondia</h2><p>Open from 1 PM to 4 AM • Burgers • Pizza • Coffee • Shakes</p><button onclick="window.open('tel:+917030203073')">
+Order Now
+</button></section><section id="menu"><h2>Popular Menu</h2><div class="menu"><div class="card">
+<h3>Classic Burger</h3>
+<p>Juicy grilled burger served fresh.</p>
+</div><div class="card">
+<h3>Farmhouse Pizza</h3>
+<p>Loaded with veggies and cheese.</p>
+</div><div class="card">
+<h3>Cold Coffee</h3>
+<p>Perfect late night energy drink.</p>
+</div><div class="card">
+<h3>Momos</h3>
+<p>Hot and tasty dumplings.</p>
+</div><div class="card">
+<h3>Chocolate Shake</h3>
+<p>Rich chocolate flavor.</p>
+</div><div class="card">
+<h3>Masala Maggi</h3>
+<p>Quick midnight snack.</p>
+</div></div></section><section id="about"><h2>About The Night Owl Cafe</h2><p class="about">
+The Night Owl Cafe is a late night cafe located near Sindhi School in Gondia.
+Known for its burgers, pizzas, shakes and late night snacks,
+it is a favorite hangout spot for food lovers.
+</p></section><section id="contact"><h2>Contact</h2><div class="contact"><p>📍 Near Sindhi School, Gondia</p>
+<p>🕐 Open: 1 PM – 4 AM</p>
+<p>📞 +91 70302 03073</p></div></section><footer>Demo website created by PixelForge Design Studio
 
-.whatsapp-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:12px 16px;
-border-radius:30px;
-text-decoration:none;
-font-size:14px;
-box-shadow:0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* MOBILE FIX */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:34px;
-}
-
-.whatsapp-btn{
-bottom:15px;
-right:15px;
-padding:10px 14px;
-font-size:13px;
-}
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">
-<img src="logo.png">
-Pixel Forge
-</div>
-
-<nav>
-<a href="#portfolio">Portfolio</a>
-<a href="#pricing">Pricing</a>
-<a href="#contact">Get Design</a>
-</nav>
-
-</header>
-
-<section class="hero">
-
-<h1>Pixel Forge Digital Studio</h1>
-
-<p>Modern poster designs and simple websites for cafes, gyms and growing businesses.</p>
-
-<a class="hero-btn" href="#portfolio">View Portfolio</a>
-
-</section>
-
-<section id="portfolio">
-
-<h2>Portfolio</h2>
-
-<div class="portfolio-grid">
-
-<div class="project">
-<h3>Gym Promotion Poster</h3>
-<p>Instagram marketing poster for fitness brand.</p>
-</div>
-
-<div class="project">
-<h3>Restaurant Promotion</h3>
-<p>Social media design for restaurants.</p>
-</div>
-
-<div class="project">
-<h3>Night Owl Cafe</h3>
-
-<p>Concept website created for a late night cafe.</p>
-
-<a href="/nightowl-cafe" target="_blank">
-View Demo Website
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="pricing">
-
-<h2>Poster Packages</h2>
-
-<div class="pricing">
-
-<div class="price-card">
-<h3>Starter</h3>
-<div class="price">₹199</div>
-<p>1 Poster Design</p>
-</div>
-
-<div class="price-card">
-<h3>Growth</h3>
-<div class="price">₹499</div>
-<p>3 Poster Designs</p>
-</div>
-
-<div class="price-card">
-<h3>Business</h3>
-<div class="price">₹1500</div>
-<p>10 Poster Designs</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="contact" id="contact">
-
-<h2>Start Your Design</h2>
-
-<p>Contact Pixel Forge Digital Studio</p>
-
-<a href="https://wa.me/919699716215">WhatsApp</a>
-
-<a href="mailto:prakyushchauhan70@gmail.com">Email</a>
-
-<a href="https://www.instagram.com/pixelforge.studio_" target="_blank">Instagram</a>
-
-</section>
-
-<footer>
-
-©️ 2026 Pixel Forge Digital Studio
-
-</footer>
-
-<a class="whatsapp-btn" href="https://wa.me/919699716215">
-WhatsApp
-</a>
-
-</body>
-
+</footer></body>
 </html>
