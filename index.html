@@ -14,7 +14,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* gradient glow background */
+/* gradient background */
 
 body::before{
 content:'';
@@ -40,7 +40,7 @@ opacity:.15;
 z-index:-1;
 }
 
-/* NAVBAR */
+/* navbar */
 
 nav{
 display:flex;
@@ -77,18 +77,17 @@ nav a:hover{
 opacity:1;
 }
 
-/* HERO */
+/* hero */
 
 .hero{
-padding:160px 8%;
+padding:150px 8%;
 text-align:center;
-max-width:1100px;
+max-width:1000px;
 margin:auto;
 }
 
 .hero h1{
-font-size:72px;
-line-height:1.1;
+font-size:60px;
 }
 
 .hero span{
@@ -98,15 +97,15 @@ background:linear-gradient(90deg,#00ffa6,#3a7bff);
 }
 
 .hero p{
-margin-top:25px;
-font-size:19px;
+margin-top:20px;
+font-size:18px;
 opacity:.7;
 }
 
-/* CONTACT BUTTONS */
+/* buttons */
 
 .buttons{
-margin-top:40px;
+margin-top:35px;
 display:flex;
 justify-content:center;
 gap:20px;
@@ -114,7 +113,7 @@ flex-wrap:wrap;
 }
 
 .btn{
-padding:16px 34px;
+padding:14px 30px;
 border-radius:40px;
 text-decoration:none;
 font-weight:600;
@@ -135,48 +134,27 @@ background:#222;
 color:white;
 }
 
-/* SECTIONS */
+/* section */
 
 section{
-padding:120px 8%;
+padding:100px 8%;
 }
 
-/* CARDS */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:35px;
-margin-top:50px;
-}
-
-.card{
-background:rgba(255,255,255,.03);
-border:1px solid rgba(255,255,255,.06);
-border-radius:18px;
-padding:40px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-/* PORTFOLIO */
+/* portfolio grid */
 
 .projects{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:35px;
-margin-top:50px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
 }
 
 .project{
-border-radius:20px;
+background:#111;
+border-radius:16px;
 overflow:hidden;
-border:1px solid rgba(255,255,255,.06);
-background:rgba(255,255,255,.03);
-transition:.4s;
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
 }
 
 .project img{
@@ -185,15 +163,36 @@ display:block;
 }
 
 .project:hover{
-transform:scale(1.05);
+transform:translateY(-6px);
 }
 
-/* TESTIMONIAL */
+/* website card */
+
+.website-card{
+padding:40px;
+background:#111;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.08);
+margin-top:30px;
+}
+
+.website-card a{
+display:inline-block;
+margin-top:20px;
+padding:12px 26px;
+background:#00ffa6;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* testimonial */
 
 .testimonial{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:60px;
+gap:40px;
 align-items:center;
 }
 
@@ -203,24 +202,26 @@ border-radius:20px;
 }
 
 .testimonial-text p{
-opacity:.75;
-line-height:1.7;
+opacity:.7;
+line-height:1.6;
 }
 
-/* FOOTER */
+/* footer */
 
 footer{
 text-align:center;
-padding:60px;
-border-top:1px solid rgba(255,255,255,.06);
+padding:50px;
+border-top:1px solid rgba(255,255,255,.08);
 opacity:.6;
-margin-top:100px;
+margin-top:80px;
 }
+
+/* mobile */
 
 @media(max-width:900px){
 
 .hero h1{
-font-size:42px;
+font-size:36px;
 }
 
 .testimonial{
@@ -236,36 +237,35 @@ Pixel Forge
 <a href="#">Portfolio</a>
 <a href="#">Services</a>
 <a href="#">Contact</a>
-</div></nav><!-- HERO --><section class="hero"><h1>
-Design that turns <span>ideas into brands</span>
-</h1><p>
-A premium design studio helping creators and businesses build powerful digital brands.
-</p><div class="buttons"><a href="https://wa.me/919699716215" class="btn whatsapp">
-WhatsApp
-</a><a href="https://instagram.com/pixelforge.studio_" class="btn instagram">
-Instagram
-</a><a href="mailto:pratyushchauhan70@gmail.com" class="btn email">
-Email
-</a></div></section><!-- HOW IT WORKS --><section><h2 style="font-size:48px;">How It Works</h2><div class="grid"><div class="card">
-<h3>1. Tell Your Requirement</h3>
-<p>Share your design requirement or idea.</p>
-</div><div class="card">
-<h3>2. We Design</h3>
-<p>We create premium visuals for your brand.</p>
-</div><div class="card">
-<h3>3. Delivery</h3>
-<p>You receive ready-to-use professional designs.</p>
-</div></div></section><!-- POSTER PORTFOLIO --><section><h2 style="font-size:48px;">Poster Design Portfolio</h2><div class="projects"><div class="project">
-<img src="poster1.png">
+</div></nav><!-- HERO --><section class="hero"><h1>Design that turns <span>ideas into brands</span></h1><p>
+Premium poster and website design studio helping businesses grow visually.
+</p><div class="buttons"><a href="https://wa.me/919699716215" class="btn whatsapp">WhatsApp</a>
+
+<a href="https://instagram.com/pixelforge.studio_" class="btn instagram">Instagram</a>
+
+<a href="mailto:pratyushchauhan70@gmail.com" class="btn email">Email</a>
+
+</div></section><!-- POSTER PORTFOLIO --><section><h2 style="font-size:40px;">Poster Design Portfolio</h2><div class="projects"><div class="project">
+<img src="images/2.png">
 </div><div class="project">
-<img src="poster2.png">
+<img src="images/3.png">
 </div><div class="project">
-<img src="poster3.png">
-</div></div></section><!-- WEBSITE PORTFOLIO --><section><h2 style="font-size:48px;">Website Projects</h2><div class="projects"><div class="project">
-<img src="nightowl.png">
-</div></div></section><!-- TESTIMONIAL --><section><h2 style="font-size:48px;">Client Work</h2><div class="testimonial"><img src="trading.png"><div class="testimonial-text"><h3>Trading Course Promotion Poster</h3><p>
-This promotional poster was designed for a trading educator launching an Indian Options Trading course.  
-The goal was to create a professional financial design with strong visual hierarchy and clear course highlights.
+<img src="images/4.png">
+</div><div class="project">
+<img src="images/cafe.png">
+</div><div class="project">
+<img src="images/coaching.png">
+</div><div class="project">
+<img src="images/gym.png">
+</div><div class="project">
+<img src="images/realestate.png">
+</div></div></section><!-- WEBSITE PROJECT --><section><h2 style="font-size:40px;">Website Projects</h2><div class="website-card"><h3>Night Owl Cafe Website</h3><p>
+A modern cafe website designed to showcase ambience, menu and brand identity.
+</p><a href="nightowl-cafe/index.html" target="_blank">
+View Website
+</a></div></section><!-- TESTIMONIAL --><section><h2 style="font-size:40px;">Client Work</h2><div class="testimonial"><img src="trading.png"><div class="testimonial-text"><h3>Trading Course Poster</h3><p>
+Promotional poster designed for an Indian options trading course launch.
+The design focuses on financial visuals, clarity and social media impact.
 </p></div></div></section><footer>©️ 2026 Pixel Forge Digital Studio
 
 </footer></body></html>
