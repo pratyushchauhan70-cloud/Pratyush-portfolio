@@ -1,8 +1,13 @@
 <!DOCTYPE html><html lang="en">
 <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pixel Forge Design Studio</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PixelForge Design Studio</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
 
 body{
 background:#050505;
@@ -10,25 +15,29 @@ color:white;
 overflow-x:hidden;
 }
 
-/* background glow */
+/* gradient glow */
 
 body::before{
 content:'';
 position:fixed;
-width:600px;height:600px;
-background:radial-gradient(circle,#00ffa6 0%,transparent 70%);
-top:-200px;left:-200px;
-opacity:.12;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#0066ff 0%,transparent 70%);
+top:-200px;
+left:-200px;
+opacity:.15;
 z-index:-1;
 }
 
 body::after{
 content:'';
 position:fixed;
-width:600px;height:600px;
-background:radial-gradient(circle,#3a7bff 0%,transparent 70%);
-bottom:-200px;right:-200px;
-opacity:.12;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#00ffa6 0%,transparent 70%);
+bottom:-200px;
+right:-200px;
+opacity:.15;
 z-index:-1;
 }
 
@@ -39,58 +48,108 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:22px 8%;
-background:#000;
+background:black;
 border-bottom:1px solid #222;
 position:sticky;
 top:0;
 z-index:100;
 }
 
-header img{height:38px;}
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+height:36px;
+}
+
+.logo span{
+font-weight:600;
+font-size:18px;
+}
 
 nav a{
 margin-left:28px;
 color:#aaa;
 text-decoration:none;
-font-size:15px;
+font-size:14px;
 }
 
-nav a:hover{color:white;}
+nav a:hover{
+color:white;
+}
 
 /* HERO */
 
 .hero{
 text-align:center;
-padding:130px 20px;
+padding:140px 20px;
 max-width:900px;
 margin:auto;
 }
 
-.hero h1{font-size:64px;font-weight:700;}
+.hero h1{
+font-size:64px;
+line-height:1.1;
+}
 
 .hero p{
-color:#aaa;
-margin-top:15px;
+margin-top:18px;
 font-size:18px;
+color:#aaa;
+}
+
+.hero small{
+display:block;
+margin-top:15px;
+color:#777;
 }
 
 /* SECTION */
 
 section{
-padding:90px 8%;
-opacity:0;
-transform:translateY(60px);
-transition:.8s;
-}
-
-section.show{
-opacity:1;
-transform:translateY(0);
+padding:100px 8%;
 }
 
 .section-title{
 font-size:36px;
-margin-bottom:40px;
+margin-bottom:45px;
+}
+
+/* CASE STUDY */
+
+.case{
+background:#111;
+padding:40px;
+border-radius:16px;
+border:1px solid #222;
+}
+
+.case h3{
+margin-bottom:12px;
+}
+
+.case p{
+color:#bbb;
+margin-bottom:14px;
+}
+
+.case span{
+color:#00ffa6;
+font-weight:500;
+}
+
+.case a{
+display:inline-block;
+margin-top:16px;
+padding:12px 28px;
+background:linear-gradient(45deg,#00ffa6,#0066ff);
+color:white;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
 }
 
 /* GRID */
@@ -102,16 +161,16 @@ gap:25px;
 }
 
 .card{
-background:#0f0f0f;
+background:#111;
 border-radius:14px;
 overflow:hidden;
 border:1px solid #222;
-transition:.3s;
+transition:.35s;
 }
 
 .card:hover{
-transform:translateY(-8px) scale(1.03);
-box-shadow:0 20px 40px rgba(0,0,0,.6);
+transform:translateY(-8px);
+border-color:#444;
 }
 
 .card img{
@@ -119,55 +178,39 @@ width:100%;
 display:block;
 }
 
-/* CASE STUDY */
-
-.case{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.case img{
-width:100%;
-border-radius:14px;
-}
-
-.case a{
-display:inline-block;
-margin-top:20px;
-padding:12px 24px;
-background:#00ffa6;
-color:black;
-border-radius:40px;
-text-decoration:none;
-font-weight:600;
-}
-
 /* PRICING */
 
-.pricing{display:flex;gap:30px;flex-wrap:wrap;}
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
 
 .price{
-background:#0f0f0f;
-padding:40px;
+background:#111;
+padding:35px;
 border-radius:14px;
 border:1px solid #222;
-flex:1;
-min-width:260px;
+transition:.3s;
+}
+
+.price:hover{
+border-color:#0066ff;
 }
 
 .price h2{
-margin-top:15px;
+margin-top:10px;
 color:#00ffa6;
 }
 
 /* TESTIMONIAL */
 
-.testimonial{text-align:center;}
+.testimonial{
+text-align:center;
+}
 
 .testimonial img{
-max-width:450px;
+max-width:430px;
 width:100%;
 border-radius:14px;
 margin-top:20px;
@@ -175,47 +218,50 @@ margin-top:20px;
 
 /* FORM */
 
-.form-container{
+.form{
 max-width:600px;
 margin:auto;
-background:#0f0f0f;
+background:#111;
 padding:40px;
 border-radius:14px;
 border:1px solid #222;
 }
 
-.form-container input,
-.form-container select,
-.form-container textarea{
+.form input,
+.form select,
+.form textarea{
 width:100%;
 padding:12px;
 margin-bottom:15px;
 border-radius:8px;
 border:none;
-background:#1a1a1a;
+background:#1b1b1b;
 color:white;
 }
 
-.form-container button{
+.form button{
 padding:14px 26px;
 border:none;
 border-radius:30px;
-background:#00ffa6;
+background:linear-gradient(45deg,#00ffa6,#0066ff);
+color:white;
 font-weight:600;
 cursor:pointer;
 }
 
 /* CONTACT */
 
-.contact{text-align:center;}
+.contact{
+text-align:center;
+}
 
-.contact-buttons a{
+.contact a{
 display:inline-block;
 margin:10px;
 padding:14px 26px;
 border-radius:40px;
-background:#00ffa6;
-color:black;
+background:linear-gradient(45deg,#00ffa6,#0066ff);
+color:white;
 font-weight:600;
 text-decoration:none;
 }
@@ -224,75 +270,77 @@ text-decoration:none;
 
 footer{
 text-align:center;
-padding:40px;
-background:#000;
+padding:35px;
+background:black;
 color:#666;
-margin-top:60px;
+margin-top:80px;
 border-top:1px solid #222;
 }
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-.hero h1{font-size:38px;}
-
-.case{
-grid-template-columns:1fr;
+.hero h1{
+font-size:38px;
 }
 
 }
 
-</style></head><body><header><img src="logo.png"><nav>
-<a href="#gallery">Gallery</a>
+</style></head><body><header><div class="logo">
+<img src="logo.png">
+<span>PixelForge Design Studio</span>
+</div><nav>
 <a href="#case">Case Study</a>
+<a href="#gallery">Gallery</a>
 <a href="#pricing">Pricing</a>
 <a href="#contact">Contact</a>
-</nav></header><section class="hero"><h1>Pixel Forge Design Studio</h1>
-<p>Premium Poster & Website Design Studio</p></section><section id="case"><h2 class="section-title">Featured Case Study</h2><div class="case"><img src="images/cafe.png"><div><h3>Night Owl Cafe Website</h3><p>
-A modern website designed for a cafe brand to showcase ambience,
-menu and online presence.
-</p><a href="nightowl-cafe/index.html" target="_blank">
-View Website
-</a></div></div></section><section id="gallery"><h2 class="section-title">Poster Design Gallery</h2><div class="grid"><div class="card"><img src="images/2.png"></div>
+</nav></header><section class="hero"><h1>We Design Digital Brands That Stand Out</h1><p>Poster design, visual branding and modern websites for businesses that want to grow online.</p><small>Trusted by startups, creators and small businesses.</small>
+
+</section><section id="case"><h2 class="section-title">Featured Case Study</h2><div class="case"><h3>Night Owl Cafe Website</h3><p>
+A modern cafe website concept designed to showcase ambience, menu and digital presence for restaurant brands.
+</p><p>
+<span>Designed by PixelForge Design Studio</span> as a demo project for our client.
+</p><a href="nightowl-cafe/" target="_blank">
+View Demo Website
+</a></div></section><section id="gallery"><h2 class="section-title">Poster Design Gallery</h2><div class="grid"><div class="card"><img src="images/2.png"></div>
 <div class="card"><img src="images/3.png"></div>
 <div class="card"><img src="images/4.png"></div>
 <div class="card"><img src="images/cafe.png"></div>
 <div class="card"><img src="images/coaching.png"></div>
 <div class="card"><img src="images/gym.png"></div>
 <div class="card"><img src="images/realestate.png"></div></div></section><section id="pricing"><h2 class="section-title">Pricing</h2><div class="pricing"><div class="price">
-<h3>Poster Design</h3>
-<p>Professional Instagram Poster</p>
+<h3>Single Poster</h3>
 <h2>₹499</h2>
+<p>Professional social media poster design.</p>
+</div><div class="price">
+<h3>5 Poster Package</h3>
+<h2>₹1999</h2>
+<p>Perfect for weekly promotions.</p>
+</div><div class="price">
+<h3>10 Poster Monthly</h3>
+<h2>₹3499</h2>
+<p>Best for businesses posting daily.</p>
 </div><div class="price">
 <h3>Website Design</h3>
-<p>Landing Page Website</p>
-<h2>₹2999</h2>
-</div></div></section><section class="testimonial"><h2 class="section-title">Client Work</h2><p>Trading Course Promotional Poster</p><img src="trading.png"></section><section id="inquiry"><h2 class="section-title">Start Your Project</h2><div class="form-container"><input type="text" id="name" placeholder="Your Name"><select id="service">
+<h2>₹2999+</h2>
+<p>Modern landing page website for brands.</p>
+</div></div></section><section class="testimonial"><h2 class="section-title">Client Work</h2><p>Trading Course Promotional Poster</p><img src="trading.png"></section><section><h2 class="section-title">Start Your Project</h2><div class="form"><input type="text" id="name" placeholder="Your Name"><select id="service">
 <option>Poster Design</option>
 <option>Website Design</option>
 </select><textarea id="message" placeholder="Project details"></textarea><button onclick="sendWhatsApp()">Send Inquiry</button>
 
-</div></section><section id="contact" class="contact"><h2 class="section-title">Contact</h2><div class="contact-buttons"><a href="https://wa.me/919699716215">WhatsApp</a>
+</div></section><section id="contact" class="contact"><h2 class="section-title">Contact</h2><a href="https://wa.me/919699716215">WhatsApp</a>
 
 <a href="mailto:pratyushchauhan70@gmail.com">Email</a>
 
 <a href="https://instagram.com/pixelforge.studio_" target="_blank">Instagram</a>
 
-</div></section><footer>
-©️ 2026 Pixel Forge Design Studio
+</section><footer>PixelForge Design Studio
+<br>
+Digital Design & Brand Experience
+
 </footer><script>
-
-const sections=document.querySelectorAll("section");
-
-window.addEventListener("scroll",()=>{
-sections.forEach(section=>{
-const top=section.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
-section.classList.add("show");
-}
-});
-});
 
 function sendWhatsApp(){
 
@@ -302,7 +350,7 @@ let message=document.getElementById("message").value;
 
 let text=`New Project Inquiry%0AName: ${name}%0AService: ${service}%0AMessage: ${message}`;
 
-window.open(`https://wa.me/919699716215?text=${text}`,'_blank');
+window.open(`https://wa.me/919699716215?text=${text}`);
 
 }
 
